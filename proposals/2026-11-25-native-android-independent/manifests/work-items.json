@@ -1,0 +1,1564 @@
+{
+  "schema_version": 1,
+  "plan_id": "native-android-independent-20261125",
+  "source_commit": "80beea9ed251a628307825cba99290b5f246575b",
+  "task_statuses": [
+    "not_started",
+    "in_progress",
+    "blocked",
+    "in_review",
+    "verified"
+  ],
+  "evidence_rule": "Only verified with exact implementation commit and actual execution evidence can satisfy release gates.",
+  "milestones": {
+    "M0": "合同与技术可行性",
+    "M1": "安全连接与额度完整链",
+    "M2": "CAP/诊断完整",
+    "M3": "聊天完整",
+    "M4": "监控与系统展示完整",
+    "M5": "设备/质量/发布候选",
+    "M6": "完整移植审定",
+    "EXTRA": "基线外增强"
+  },
+  "work_items": [
+    {
+      "id": "TASK-001",
+      "title": "冻结源行为、裁决差异并建立语言无关契约",
+      "milestone": "M0",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [],
+      "feature_ids": [
+        "CON-01",
+        "CON-02",
+        "CON-03",
+        "CON-04",
+        "CON-05",
+        "CON-06",
+        "CON-07",
+        "CON-08",
+        "QUO-01",
+        "QUO-02",
+        "QUO-03",
+        "QUO-04",
+        "QUO-05",
+        "QUO-06",
+        "QUO-07",
+        "QUO-08",
+        "QUO-09",
+        "QUO-10",
+        "CAP-01",
+        "CAP-02",
+        "CAP-03",
+        "CAP-04",
+        "CAP-05",
+        "CAP-06",
+        "CAP-07",
+        "CAP-08",
+        "CAP-09",
+        "CAP-10",
+        "CAP-11",
+        "CAP-12",
+        "CAP-13",
+        "CHA-01",
+        "CHA-02",
+        "CHA-03",
+        "CHA-04",
+        "CHA-05",
+        "CHA-06",
+        "CHA-07",
+        "CHA-08",
+        "CHA-09",
+        "CHA-10",
+        "CHA-11",
+        "CHA-12",
+        "CHA-13",
+        "CHA-14",
+        "CHA-15",
+        "CHA-16",
+        "CHA-17",
+        "CHA-18",
+        "CHA-19",
+        "CHA-20",
+        "CHA-21",
+        "CHA-22",
+        "CHA-23",
+        "CHA-24",
+        "MON-01",
+        "MON-02",
+        "MON-03",
+        "MON-04",
+        "MON-05",
+        "MON-06",
+        "MON-07",
+        "MON-08",
+        "MON-09",
+        "MON-10",
+        "MON-11",
+        "MON-12"
+      ],
+      "deliverables": [
+        "source manifest复核及变更摄取规则",
+        "协议fixtures与差异ADR",
+        "先固定空数值、Unicode、single-flight取消语义"
+      ],
+      "acceptance": [
+        "每个关键边界有输入和预期输出，尚无实现的样本不标passed",
+        "PR33/34与main分开记录；没有自动吸收未合并行为",
+        "来源路径、SHA和协议版本可定位"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-002",
+      "title": "验证SDK37与原生依赖组合",
+      "milestone": "M0",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-001"
+      ],
+      "feature_ids": [
+        "AND-01",
+        "AND-06"
+      ],
+      "deliverables": [
+        "固定JDK/Gradle/AGP/Kotlin/Compose/Nav3/Adaptive/Room/Hilt矩阵",
+        "最小API26与37安装运行证据",
+        "LAN、SSE取消、后台边界和富文本技术spike"
+      ],
+      "acceptance": [
+        "至少实际编译安装到下限与当前模拟器",
+        "官方文档不一致有明确处理，未采用alpha示例为默认",
+        "输出版本锁和可重建命令，未通过项阻断相关任务"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-003",
+      "title": "模块化工程、CI与原生导航骨架",
+      "milestone": "M1",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-002"
+      ],
+      "feature_ids": [
+        "NAV-01",
+        "NAV-02",
+        "NAV-03",
+        "AND-02"
+      ],
+      "deliverables": [
+        "独立仓库根app/core/data/feature结构",
+        "五工作区返回栈与fake数据预览",
+        "轻量PR CI与分层检查"
+      ],
+      "acceptance": [
+        "旋转/resize/深链不重建业务会话",
+        "required check缺失或未执行不视为通过",
+        "单元与仪器测试入口可运行；无真实凭据"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-004",
+      "title": "安全凭据、偏好与备份基础",
+      "milestone": "M1",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-002"
+      ],
+      "feature_ids": [
+        "CON-03",
+        "CON-06",
+        "AND-04",
+        "AND-05"
+      ],
+      "deliverables": [
+        "SecretStore接口和Keystore实现",
+        "DataStore非秘密偏好",
+        "备份排除及密钥失效恢复"
+      ],
+      "acceptance": [
+        "保存/删除/损坏/恢复缺钥均注入失败测试",
+        "无明文回退，不因凭据失效清空聊天",
+        "Worker和saved-state只传ID不传密钥"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-005",
+      "title": "安全HTTP、地址和共享请求协调器",
+      "milestone": "M1",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-001",
+        "TASK-002"
+      ],
+      "feature_ids": [
+        "CON-01",
+        "CON-07",
+        "CON-08"
+      ],
+      "deliverables": [
+        "ServerEndpoint/错误模型/Transport",
+        "管理、CAP、聊天、搜索隔离策略",
+        "Clock与限流、取消、大小预算"
+      ],
+      "acceptance": [
+        "路径前缀、重定向、编码路径、实际超限与TLS负例通过",
+        "管理401/403和429跨入口共享，单账号上游错误独立",
+        "single-flight取消合同明确且无缓存绕过"
+      ],
+      "size": "L",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-006",
+      "title": "连接事务与本机恢复",
+      "milestone": "M1",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-003",
+        "TASK-004",
+        "TASK-005"
+      ],
+      "feature_ids": [
+        "CON-02",
+        "CON-03",
+        "CON-04",
+        "CON-05",
+        "CON-06",
+        "NAV-02",
+        "AND-06"
+      ],
+      "deliverables": [
+        "候选/已接受上下文和generation",
+        "remember/temporary流程",
+        "LAN权限与重连/忘记交互"
+      ],
+      "acceptance": [
+        "关闭、返回、深链与换凭据期间迟到结果不能提交",
+        "旧连接在新候选失败时可用",
+        "Android17 LAN拒绝/撤销有专门状态"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-007",
+      "title": "完整额度解析与身份缓存",
+      "milestone": "M1",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-001",
+        "TASK-005"
+      ],
+      "feature_ids": [
+        "QUO-01",
+        "QUO-03",
+        "QUO-04",
+        "QUO-05",
+        "QUO-10"
+      ],
+      "deliverables": [
+        "所有现有读取器、wire decoder和黄金样本",
+        "Observation/ReadingOutcome分离",
+        "身份代际与缓存合并规则"
+      ],
+      "acceptance": [
+        "零/null/缺字段/无数值/超额/金额单位全部覆盖",
+        "Swift/Go存在差异的样本按ADR处理并保留差异证据",
+        "禁用/删除/身份变更不能回填旧快照"
+      ],
+      "size": "L",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-008",
+      "title": "额度纵向功能完成",
+      "milestone": "M1",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-006",
+        "TASK-007"
+      ],
+      "feature_ids": [
+        "QUO-01",
+        "QUO-02",
+        "QUO-03",
+        "QUO-04",
+        "QUO-05",
+        "QUO-06",
+        "QUO-07",
+        "QUO-08",
+        "QUO-09",
+        "QUO-10"
+      ],
+      "deliverables": [
+        "渐进总览、搜索筛选、详情",
+        "批量和单账号刷新/取消/冷却",
+        "手机与宽窗口真实页面"
+      ],
+      "acceptance": [
+        "1/10/50合成账号端到端路径通过",
+        "首个结果无需等最慢账号；失败保留原观察时间",
+        "总览和详情未知/过期/限制状态一致"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-009",
+      "title": "CAP协议、统计和窗口核心",
+      "milestone": "M2",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-001",
+        "TASK-005",
+        "TASK-006"
+      ],
+      "feature_ids": [
+        "CAP-01",
+        "CAP-02",
+        "CAP-03",
+        "CAP-04",
+        "CAP-05",
+        "CAP-06",
+        "CAP-07",
+        "CAP-08",
+        "CAP-09",
+        "CAP-10",
+        "CAP-11",
+        "CAP-12",
+        "CAP-13"
+      ],
+      "deliverables": [
+        "匿名/管理资源客户端与独立资源状态",
+        "UTC时间窗和完整性预算",
+        "统计加权规则"
+      ],
+      "acceptance": [
+        "全部CAP端点按其认证约定测试",
+        "月范围只读取指定服务端摘要，不扫描无界历史",
+        "单区失败/重试和分页预算有确定性测试"
+      ],
+      "size": "L",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-010",
+      "title": "CAP完整工作区与明细",
+      "milestone": "M2",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-003",
+        "TASK-009"
+      ],
+      "feature_ids": [
+        "CAP-01",
+        "CAP-02",
+        "CAP-03",
+        "CAP-04",
+        "CAP-05",
+        "CAP-06",
+        "CAP-07",
+        "CAP-08",
+        "CAP-09",
+        "CAP-10",
+        "CAP-11",
+        "CAP-12",
+        "CAP-13"
+      ],
+      "deliverables": [
+        "模型概览、趋势分组费用、请求记录、管理统计",
+        "完整表格、分页、缺价和来源说明",
+        "范围面板与当前栏目刷新"
+      ],
+      "acceptance": [
+        "所有主线入口逐项截图与交互验证",
+        "切范围不自动请求，失败重试不偷换窗口",
+        "图表不可绘点保留表格、错误不清空成功区域"
+      ],
+      "size": "L",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-011",
+      "title": "账号诊断、偏好与隐私展示",
+      "milestone": "M2",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-004",
+        "TASK-006",
+        "TASK-008"
+      ],
+      "feature_ids": [
+        "DIA-01",
+        "DIA-02",
+        "DIA-03",
+        "DIA-04",
+        "DIA-05",
+        "DIA-06"
+      ],
+      "deliverables": [
+        "完整账号诊断",
+        "主题/已用剩余/邮箱隐私",
+        "一致错误修复入口"
+      ],
+      "acceptance": [
+        "数据错误层次不会互相误归因",
+        "设置跨重启保留且秘密不混入偏好",
+        "不新增对上游账号的写操作"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-012",
+      "title": "Room、附件和持久草稿基础",
+      "milestone": "M3",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-003",
+        "TASK-004"
+      ],
+      "feature_ids": [
+        "CHA-04",
+        "CHA-05",
+        "CHA-06",
+        "CHA-22",
+        "AND-09"
+      ],
+      "deliverables": [
+        "schema及非破坏迁移测试",
+        "AttachmentStore staged/committed恢复",
+        "摘要分页与草稿存储"
+      ],
+      "acceptance": [
+        "进程中断文件/数据库边界不产生悬空引用或误删",
+        "低存储、损坏索引、schema升级有可恢复路径",
+        "列表/搜索不解码所有附件",
+        "中文子串、代码片段、%/_字面值、组合字符及大小写搜索遵守冻结合同；搜索不加载图片，索引不得改变原可见结果"
+      ],
+      "size": "L",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-013",
+      "title": "聊天凭据、模型与设置",
+      "milestone": "M3",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-005",
+        "TASK-006",
+        "TASK-012"
+      ],
+      "feature_ids": [
+        "CHA-01",
+        "CHA-02",
+        "CHA-03",
+        "CHA-08",
+        "CHA-12"
+      ],
+      "deliverables": [
+        "推理Key发现与手动管理",
+        "模型目录和新会话策略",
+        "设置加载失败与credential revision"
+      ],
+      "acceptance": [
+        "404/501接口不可用兼容只在已验证的端点分支发生；401/403不作同类回退",
+        "模型/Key迟到响应不污染新连接",
+        "设置读取失败不能开启原本关闭的记忆或上传范围"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-014",
+      "title": "双协议SSE与计费安全传输",
+      "milestone": "M3",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-001",
+        "TASK-005"
+      ],
+      "feature_ids": [
+        "CHA-07"
+      ],
+      "deliverables": [
+        "Chat Completions/Anthropic adapter",
+        "SSE scanner与终止判定",
+        "明确兼容拒绝的有界回退与禁止透明POST重试和请求计数夹具"
+      ],
+      "acceptance": [
+        "任意UTF-8分块/CRLF/末尾事件/伪message_stop通过",
+        "200坏响应与部分结果后断流不重复推理POST",
+        "请求大小、空闲/整体超时、取消及response关闭验证",
+        "请求派发后首个输出前超时/断网，保持unknown/interrupted，HTTP客户端不得透明重试POST；用真实请求计数夹具验证"
+      ],
+      "size": "L",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-015",
+      "title": "推理档位兼容策略",
+      "milestone": "M3",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-013",
+        "TASK-014"
+      ],
+      "feature_ids": [
+        "CHA-08",
+        "CHA-03"
+      ],
+      "deliverables": [
+        "纯Kotlin ReasoningPolicy",
+        "代际化capability cache",
+        "实际应用档位呈现模型"
+      ],
+      "acceptance": [
+        "所有现有档位和允许回退阶梯有fixture",
+        "有界重试且错误类别不会互相误判",
+        "旧generation拒绝不能污染新缓存"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-016",
+      "title": "生成、续写和跨服务状态机",
+      "milestone": "M3",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-012",
+        "TASK-013",
+        "TASK-014",
+        "TASK-015"
+      ],
+      "feature_ids": [
+        "CHA-09",
+        "CHA-10",
+        "CHA-21",
+        "CHA-22",
+        "CHA-23",
+        "CHA-24"
+      ],
+      "deliverables": [
+        "GenerationCoordinator/attempt模型",
+        "PromptBuilder与历史边界",
+        "单写入序列和删除屏障"
+      ],
+      "acceptance": [
+        "取消/续写/编辑/换服务/删除交错无复活和串会话",
+        "确认绑定目的地与凭据revision",
+        "恢复streaming为interrupted且无自动重发，用量累计正确"
+      ],
+      "size": "L",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-017",
+      "title": "完整原生聊天界面与富文本",
+      "milestone": "M3",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-003",
+        "TASK-012",
+        "TASK-016"
+      ],
+      "feature_ids": [
+        "CHA-04",
+        "CHA-05",
+        "CHA-06",
+        "CHA-10",
+        "CHA-11",
+        "CHA-17",
+        "CHA-23"
+      ],
+      "deliverables": [
+        "会话CRUD和搜索",
+        "原生消息、推理折叠、输入框与图片",
+        "代码/表格/公式/复制/滚动行为"
+      ],
+      "acceptance": [
+        "所有源端用户动作有可达入口",
+        "长流式只更新必要内容，向上阅读不被拉回",
+        "中文/emoji/代码围栏/大字体与附件选择恢复通过"
+      ],
+      "size": "L",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-018",
+      "title": "五搜索提供方与来源快照",
+      "milestone": "M3",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-013",
+        "TASK-016"
+      ],
+      "feature_ids": [
+        "CHA-13",
+        "CHA-14"
+      ],
+      "deliverables": [
+        "全部源搜索adapter",
+        "独立SecretStore作用域与URL安全",
+        "searchCompleted/query/source冻结"
+      ],
+      "acceptance": [
+        "未配置/失败/零结果/中断区分",
+        "搜索停止/删会话后不继续发推理请求",
+        "结果标为不可信来源，密钥不随redirect或诊断泄漏"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-019",
+      "title": "记忆、技能、指令和标题",
+      "milestone": "M3",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-013",
+        "TASK-016",
+        "TASK-017"
+      ],
+      "feature_ids": [
+        "CHA-11",
+        "CHA-12",
+        "CHA-15",
+        "CHA-16",
+        "CHA-19"
+      ],
+      "deliverables": [
+        "记忆CRUD/置顶/开关",
+        "slash技能CRUD与重复校验",
+        "全局/会话指令和自动标题"
+      ],
+      "acceptance": [
+        "技能修改不改变原轮重试请求",
+        "全局作用域明确，跨服务器发送有对应提示",
+        "标题迟到不覆盖用户输入，失败不破坏回复"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-020",
+      "title": "静态HTML安全预览",
+      "milestone": "M3",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-017"
+      ],
+      "feature_ids": [
+        "CHA-18"
+      ],
+      "deliverables": [
+        "静态预览、源码展示和复制",
+        "WebView隔离配置与资源拦截",
+        "loopback正/负对照夹具"
+      ],
+      "acceptance": [
+        "脚本/网络/外部CSS/CSS URL/iframe/file/content/intent/桥/弹窗负例通过；允许的内联样式有正对照",
+        "正对照能访问测试server，排除测试本身断网假通过",
+        "主聊天和预览不共享凭据/cookie/WebView全局状态"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-021",
+      "title": "聊天后台收尾、通知与持久化恢复",
+      "milestone": "M3",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-004",
+        "TASK-016",
+        "TASK-017"
+      ],
+      "feature_ids": [
+        "CHA-20",
+        "CHA-22",
+        "CHA-24",
+        "AND-03",
+        "AND-07"
+      ],
+      "deliverables": [
+        "最多30秒best-effort后台策略",
+        "checkpoint及安全本地完成通知",
+        "低存储/强杀/任务切换恢复"
+      ],
+      "acceptance": [
+        "退后台立即提交checkpoint；到期取消并保留状态",
+        "系统提前回收后恢复为interrupted，不宣称保证运行30秒",
+        "通知拒绝不阻塞保存；payload仅含固定完成文案及不透明会话/完成ID，不含标题、正文、邮箱或服务地址"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-022",
+      "title": "跨平台监控新协议与迁移规范",
+      "milestone": "M4",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-001"
+      ],
+      "feature_ids": [
+        "MON-01",
+        "MON-02",
+        "MON-03",
+        "MON-04",
+        "MON-05",
+        "MON-06",
+        "MON-07",
+        "MON-08",
+        "MON-09",
+        "MON-10",
+        "MON-11",
+        "MON-12"
+      ],
+      "deliverables": [
+        "版本化订阅/端点/capabilities合同",
+        "错误表/幂等/CAS/墓碑与生命周期fixture",
+        "Android/iOS旧v1升级兼容矩阵"
+      ],
+      "acceptance": [
+        "字段、认证、状态转移和未知结果可独立实现",
+        "FCM token按opaque case-sensitive处理",
+        "保留v1终态和授权边界；不偷加TTL"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-023",
+      "title": "Go监控核心协议与兼容层实现",
+      "milestone": "M4",
+      "repository": "rinmashiro0529/cpa-quota-ios",
+      "depends_on": [
+        "TASK-022"
+      ],
+      "feature_ids": [
+        "MON-08",
+        "MON-02",
+        "MON-03",
+        "MON-04",
+        "MON-05",
+        "MON-06",
+        "MON-07",
+        "MON-09",
+        "MON-10",
+        "MON-11"
+      ],
+      "deliverables": [
+        "另仓PR实现新协议和v1 adapter",
+        "存储schema迁移与恢复",
+        "旧客户端契约回归"
+      ],
+      "acceptance": [
+        "Go单测/race/vet和v1合成回归通过",
+        "重启/磁盘错误/迟到注册/跨身份重放不破坏终态",
+        "只交付代码与部署文档，生产升级需明确授权",
+        "服务端endpoint registry实现CAS与revision校验；旧token投递回调不能撤销新端点"
+      ],
+      "size": "L",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-024",
+      "title": "Android监控客户端与恢复工作区",
+      "milestone": "M4",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-004",
+        "TASK-005",
+        "TASK-006",
+        "TASK-022"
+      ],
+      "feature_ids": [
+        "MON-01",
+        "MON-02",
+        "MON-03",
+        "MON-04",
+        "MON-05",
+        "MON-06",
+        "MON-07",
+        "MON-08",
+        "MON-09",
+        "MON-10",
+        "MON-11"
+      ],
+      "deliverables": [
+        "监控独立身份、连接与source选择",
+        "订阅控制、快照、旧记录与诊断",
+        "新旧服务能力降级"
+      ],
+      "acceptance": [
+        "source/账号/租约/容量与完整停止恢复入口均可达",
+        "无新服务时不伪造已创建；原会话可核对停止",
+        "操作unknown保持恢复记录，关显示不误报停服务"
+      ],
+      "size": "L",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-025",
+      "title": "Go FCM投递适配",
+      "milestone": "M4",
+      "repository": "rinmashiro0529/cpa-quota-ios",
+      "depends_on": [
+        "TASK-023"
+      ],
+      "feature_ids": [
+        "MON-08",
+        "MON-12"
+      ],
+      "deliverables": [
+        "投递provider接口与FCM实现",
+        "令牌轮换、失效分类和安全payload",
+        "合成provider/真实测试环境流程"
+      ],
+      "acceptance": [
+        "不透明token不变大小写、不按APNs hex校验",
+        "平台接受与设备送达分开；失败退避有界",
+        "服务账号私钥只服务端，日志不含敏感payload"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-026",
+      "title": "Android推送与通知生命周期",
+      "milestone": "M4",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-021",
+        "TASK-024",
+        "TASK-025"
+      ],
+      "feature_ids": [
+        "MON-08",
+        "MON-12",
+        "NAV-03",
+        "AND-07"
+      ],
+      "deliverables": [
+        "PushProvider与FCM客户端",
+        "token注册/注销/轮换/通知channel",
+        "无GMS能力页和可延迟更新"
+      ],
+      "acceptance": [
+        "授权GMS测试设备真实送达并可冷启动定位",
+        "token轮换、重复/乱序/过期事件按revision处理",
+        "无GMS/拒绝通知不会崩溃或显示推送已就绪"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-027",
+      "title": "原生小组件与系统展示",
+      "milestone": "M4",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-008",
+        "TASK-011",
+        "TASK-024"
+      ],
+      "feature_ids": [
+        "WID-01",
+        "WID-02",
+        "WID-03",
+        "WID-04",
+        "WID-05",
+        "WID-06"
+      ],
+      "deliverables": [
+        "Glance小组件与配置",
+        "按来源/账号opaque ID的最小安全投影",
+        "过期/关闭/切来源清理"
+      ],
+      "acceptance": [
+        "默认关闭，失效选择不切到别人账号",
+        "尺寸改变、大字体、时间标记和深链可用",
+        "Android17位图预算、隐私遮罩和停止展示验证"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-028",
+      "title": "完整自适应与无障碍验收",
+      "milestone": "M5",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-010",
+        "TASK-011",
+        "TASK-017",
+        "TASK-018",
+        "TASK-019",
+        "TASK-020",
+        "TASK-021",
+        "TASK-026",
+        "TASK-027"
+      ],
+      "feature_ids": [
+        "NAV-01",
+        "NAV-03",
+        "AND-02",
+        "AND-08"
+      ],
+      "deliverables": [
+        "五工作区折叠/横屏/分屏/IME完善",
+        "TalkBack及大字体检查",
+        "状态与错误中文统一"
+      ],
+      "acceptance": [
+        "展开/旋转/折回连续流程保留同一会话与草稿",
+        "最后一项可达、焦点和返回顺序正确",
+        "截图附设备、OS、SHA与窗口证据，不以iOS模拟器代替"
+      ],
+      "size": "L",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-029",
+      "title": "系统故障与升级集成矩阵",
+      "milestone": "M5",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-008",
+        "TASK-010",
+        "TASK-011",
+        "TASK-017",
+        "TASK-018",
+        "TASK-019",
+        "TASK-020",
+        "TASK-021",
+        "TASK-026",
+        "TASK-027"
+      ],
+      "feature_ids": [
+        "AND-03",
+        "AND-04",
+        "AND-05",
+        "AND-06",
+        "AND-07",
+        "AND-09"
+      ],
+      "deliverables": [
+        "min26/33/36/37分层矩阵",
+        "网络/权限/Doze/存储/恢复故障注入",
+        "安装升级和数据库迁移集成"
+      ],
+      "acceptance": [
+        "系统kill、Activity recreation、force-stop分别报告",
+        "真实本地持久内容恢复且无重复计费动作",
+        "未执行/环境阻塞不会改写成pass"
+      ],
+      "size": "L",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-030",
+      "title": "性能预算与Release优化",
+      "milestone": "M5",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-028",
+        "TASK-029"
+      ],
+      "feature_ids": [
+        "AND-10",
+        "CHA-17"
+      ],
+      "deliverables": [
+        "固定真机/数据集/测量协议",
+        "Macrobenchmark、profile与渲染/IO优化",
+        "可比较基线和回归门槛"
+      ],
+      "acceptance": [
+        "记录冷启动、长会话、帧、RSS、磁盘写放大与取消延迟",
+        "外部模型延迟和本地耗时分开",
+        "没有用模拟器或Debug性能冒充Release真机结果"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-031",
+      "title": "独立安全与契约审阅",
+      "milestone": "M5",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-023",
+        "TASK-025",
+        "TASK-028",
+        "TASK-029"
+      ],
+      "feature_ids": [
+        "CON-07",
+        "CON-08",
+        "CHA-18",
+        "CHA-21",
+        "MON-10",
+        "AND-04",
+        "AND-05"
+      ],
+      "deliverables": [
+        "威胁边界与发布范围复核",
+        "源码/依赖/历史/附件扫描",
+        "认证、重放、敏感显示和WebView负例报告"
+      ],
+      "acceptance": [
+        "当前候选的严重和高风险问题为0或保持发布阻断",
+        "审阅者独立于实现者；不能用文档自证运行安全",
+        "契约差异有ADR且未删关键断言"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-032",
+      "title": "签名、分发、升级和运营文档",
+      "milestone": "M5",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-029",
+        "TASK-030",
+        "TASK-031"
+      ],
+      "feature_ids": [
+        "AND-11"
+      ],
+      "deliverables": [
+        "固定包身份、Release APK/AAB与签名流程",
+        "最小权限/隐私/三方声明",
+        "升级/暂停发布/前向修复手册"
+      ],
+      "acceptance": [
+        "release安装与覆盖升级保留数据",
+        "签名材料不入repo或产物日志",
+        "不支持数据库降级时明确前向修复；不承诺旧APK可直接回滚"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-033",
+      "title": "完整移植发布审定与交付",
+      "milestone": "M6",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-001",
+        "TASK-002",
+        "TASK-003",
+        "TASK-004",
+        "TASK-005",
+        "TASK-006",
+        "TASK-007",
+        "TASK-008",
+        "TASK-009",
+        "TASK-010",
+        "TASK-011",
+        "TASK-012",
+        "TASK-013",
+        "TASK-014",
+        "TASK-015",
+        "TASK-016",
+        "TASK-017",
+        "TASK-018",
+        "TASK-019",
+        "TASK-020",
+        "TASK-021",
+        "TASK-022",
+        "TASK-023",
+        "TASK-024",
+        "TASK-025",
+        "TASK-026",
+        "TASK-027",
+        "TASK-028",
+        "TASK-029",
+        "TASK-030",
+        "TASK-031",
+        "TASK-032",
+        "TASK-034"
+      ],
+      "feature_ids": [
+        "NAV-01",
+        "NAV-02",
+        "NAV-03",
+        "CON-01",
+        "CON-02",
+        "CON-03",
+        "CON-04",
+        "CON-05",
+        "CON-06",
+        "CON-07",
+        "CON-08",
+        "QUO-01",
+        "QUO-02",
+        "QUO-03",
+        "QUO-04",
+        "QUO-05",
+        "QUO-06",
+        "QUO-07",
+        "QUO-08",
+        "QUO-09",
+        "QUO-10",
+        "CAP-01",
+        "CAP-02",
+        "CAP-03",
+        "CAP-04",
+        "CAP-05",
+        "CAP-06",
+        "CAP-07",
+        "CAP-08",
+        "CAP-09",
+        "CAP-10",
+        "CAP-11",
+        "CAP-12",
+        "CAP-13",
+        "DIA-01",
+        "DIA-02",
+        "DIA-03",
+        "DIA-04",
+        "DIA-05",
+        "DIA-06",
+        "CHA-01",
+        "CHA-02",
+        "CHA-03",
+        "CHA-04",
+        "CHA-05",
+        "CHA-06",
+        "CHA-07",
+        "CHA-08",
+        "CHA-09",
+        "CHA-10",
+        "CHA-11",
+        "CHA-12",
+        "CHA-13",
+        "CHA-14",
+        "CHA-15",
+        "CHA-16",
+        "CHA-17",
+        "CHA-18",
+        "CHA-19",
+        "CHA-20",
+        "CHA-21",
+        "CHA-22",
+        "CHA-23",
+        "CHA-24",
+        "MON-01",
+        "MON-02",
+        "MON-03",
+        "MON-04",
+        "MON-05",
+        "MON-06",
+        "MON-07",
+        "MON-08",
+        "MON-09",
+        "MON-10",
+        "MON-11",
+        "MON-12",
+        "WID-01",
+        "WID-02",
+        "WID-03",
+        "WID-04",
+        "WID-05",
+        "WID-06",
+        "AND-01",
+        "AND-02",
+        "AND-03",
+        "AND-04",
+        "AND-05",
+        "AND-06",
+        "AND-07",
+        "AND-08",
+        "AND-09",
+        "AND-10",
+        "AND-11"
+      ],
+      "deliverables": [
+        "93项必需能力与证据总账",
+        "精确SHA/依赖锁/服务版本/设备矩阵",
+        "维护者可审阅发布包"
+      ],
+      "acceptance": [
+        "所有必需任务完成、关键门禁通过、开放缺口真实列出",
+        "GMS完整能力与无GMS降级声明准确；未以core-only/MVP冒充完全移植",
+        "用户选择基准与发布授权分别有记录，自动化不擅自发布或部署"
+      ],
+      "size": "S",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-034",
+      "title": "发布前源版本漂移复核",
+      "milestone": "M5",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-001",
+        "TASK-028",
+        "TASK-029"
+      ],
+      "feature_ids": [
+        "NAV-01",
+        "NAV-02",
+        "NAV-03",
+        "CON-01",
+        "CON-02",
+        "CON-03",
+        "CON-04",
+        "CON-05",
+        "CON-06",
+        "CON-07",
+        "CON-08",
+        "QUO-01",
+        "QUO-02",
+        "QUO-03",
+        "QUO-04",
+        "QUO-05",
+        "QUO-06",
+        "QUO-07",
+        "QUO-08",
+        "QUO-09",
+        "QUO-10",
+        "CAP-01",
+        "CAP-02",
+        "CAP-03",
+        "CAP-04",
+        "CAP-05",
+        "CAP-06",
+        "CAP-07",
+        "CAP-08",
+        "CAP-09",
+        "CAP-10",
+        "CAP-11",
+        "CAP-12",
+        "CAP-13",
+        "DIA-01",
+        "DIA-02",
+        "DIA-03",
+        "DIA-04",
+        "DIA-05",
+        "DIA-06",
+        "CHA-01",
+        "CHA-02",
+        "CHA-03",
+        "CHA-04",
+        "CHA-05",
+        "CHA-06",
+        "CHA-07",
+        "CHA-08",
+        "CHA-09",
+        "CHA-10",
+        "CHA-11",
+        "CHA-12",
+        "CHA-13",
+        "CHA-14",
+        "CHA-15",
+        "CHA-16",
+        "CHA-17",
+        "CHA-18",
+        "CHA-19",
+        "CHA-20",
+        "CHA-21",
+        "CHA-22",
+        "CHA-23",
+        "CHA-24",
+        "MON-01",
+        "MON-02",
+        "MON-03",
+        "MON-04",
+        "MON-05",
+        "MON-06",
+        "MON-07",
+        "MON-08",
+        "MON-09",
+        "MON-10",
+        "MON-11",
+        "MON-12",
+        "WID-01",
+        "WID-02",
+        "WID-03",
+        "WID-04",
+        "WID-05",
+        "WID-06"
+      ],
+      "deliverables": [
+        "冻结SHA到发布时iOS main差异报告",
+        "新功能/安全修复/行为变化摄取决策",
+        "新版parity台账或明确版本化声明"
+      ],
+      "acceptance": [
+        "未合并PR不能自动变基线",
+        "新P0安全修复作为发布阻断摄取，其余变更有显式范围决定",
+        "发布只声称对已验证源SHA完整，不笼统说对最新版本完整"
+      ],
+      "size": "M",
+      "release_required": true,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-035",
+      "title": "可选：跨平台历史交换",
+      "milestone": "EXTRA",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-012",
+        "TASK-016",
+        "TASK-032"
+      ],
+      "feature_ids": [
+        "ENH-01"
+      ],
+      "deliverables": [
+        "版本化manifest+正文+附件交换格式",
+        "iOS导出配套任务需单独授权",
+        "Android导入与恢复"
+      ],
+      "acceptance": [
+        "默认无密钥，schema/压缩大小/路径穿越/重复ID有边界测试",
+        "源端无导出能力时不声称迁移已可用",
+        "未完成不影响冻结基线原功能完整性的结论"
+      ],
+      "size": "L",
+      "release_required": false,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-036",
+      "title": "可选：持久聊天任务服务",
+      "milestone": "EXTRA",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-016",
+        "TASK-021",
+        "TASK-031"
+      ],
+      "feature_ids": [
+        "ENH-02"
+      ],
+      "deliverables": [
+        "server job/status/cancel/recovery协议",
+        "未知结果与计费边界",
+        "独立隐私/运维设计"
+      ],
+      "acceptance": [
+        "额外服务经明确授权，不把QuotaMonitor直接当聊天代理",
+        "基线外功能独立版本和验收",
+        "任务状态不能冒充模型服务幂等保证"
+      ],
+      "size": "L",
+      "release_required": false,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-037",
+      "title": "可选：无GMS实时推送扩展",
+      "milestone": "EXTRA",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-025",
+        "TASK-026"
+      ],
+      "feature_ids": [
+        "ENH-03"
+      ],
+      "deliverables": [
+        "经需求确认的厂商provider",
+        "分发/账号/隐私约束",
+        "指定真机送达矩阵"
+      ],
+      "acceptance": [
+        "每个厂商独立证据，不承诺全部Android通用保活",
+        "不影响无该SDK设备核心功能",
+        "未实现不宣传无GMS后台通知全等价"
+      ],
+      "size": "L",
+      "release_required": false,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    },
+    {
+      "id": "TASK-038",
+      "title": "可选：跨设备同步",
+      "milestone": "EXTRA",
+      "repository": "rinmashiro0529/cpa-quota-Android",
+      "depends_on": [
+        "TASK-012",
+        "TASK-031"
+      ],
+      "feature_ids": [
+        "ENH-04"
+      ],
+      "deliverables": [
+        "身份与加密边界",
+        "冲突合并、删除与附件同步",
+        "单独产品决策"
+      ],
+      "acceptance": [
+        "新增云服务/收集范围另获授权",
+        "本地模式无强制注册",
+        "与本次移植发布分开"
+      ],
+      "size": "L",
+      "release_required": false,
+      "status": "not_started",
+      "owner": null,
+      "evidence": [],
+      "execution_notes": "Each item is a reviewable responsibility; split a large implementation into sequenced PRs without weakening these acceptance conditions."
+    }
+  ]
+}

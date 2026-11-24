@@ -1,0 +1,1983 @@
+{
+  "schema_version": 1,
+  "plan_id": "native-android-independent-20261125",
+  "source_commit": "80beea9ed251a628307825cba99290b5f246575b",
+  "claim": "Candidate scope inventory; every implementation and runtime verification is pending.",
+  "features": [
+    {
+      "id": "NAV-01",
+      "group": "导航与入口",
+      "title": "五工作区与独立返回栈",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/CPAQuotaRootView.swift"
+      ],
+      "acceptance": "保持额度、CAP、聊天、诊断、连接五入口；跨工作区往返不重置各自详情。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-003",
+        "TASK-028",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "NAV-02",
+      "group": "导航与入口",
+      "title": "未配置入口与连接引导",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/CPAQuotaRootView.swift"
+      ],
+      "acceptance": "未连接页面有统一连接入口，验证期间状态真实。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-003",
+        "TASK-006",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "NAV-03",
+      "group": "导航与入口",
+      "title": "深链与通知冷启动路由",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaActivity/CPAQuotaDeepLink.swift"
+      ],
+      "acceptance": "额度/监控深链和聊天通知只携带业务ID，冷启动、失效ID和迟到恢复均安全。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-003",
+        "TASK-026",
+        "TASK-028",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CON-01",
+      "group": "连接与网络",
+      "title": "HTTPS地址规范化与路径前缀",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/CPAServer.swift"
+      ],
+      "acceptance": "拒绝危险URL与编码路径；反代前缀、默认端口和管理后缀有黄金样本。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-005",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CON-02",
+      "group": "连接与网络",
+      "title": "管理连接验证与渐进进入",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/CPAQuotaSession.swift"
+      ],
+      "acceptance": "账号清单验证成功后进入；额度慢账号不阻塞入口。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-006",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CON-03",
+      "group": "连接与网络",
+      "title": "记住连接与临时连接",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/LoginOnboardingView.swift"
+      ],
+      "acceptance": "持久与仅内存两种模式明确；安全存储失败不静默降级。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-004",
+        "TASK-006",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CON-04",
+      "group": "连接与网络",
+      "title": "候选取消、回滚与迟到拒绝",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/CPAQuotaSession.swift"
+      ],
+      "acceptance": "返回、关闭、深链、换密钥使旧候选无效且保留原连接。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-006",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CON-05",
+      "group": "连接与网络",
+      "title": "重连、换服务与凭据代际",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/CPAClient.swift"
+      ],
+      "acceptance": "同账号ID更换身份或凭据后旧结果、能力和缓存失效。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-006",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CON-06",
+      "group": "连接与网络",
+      "title": "忘记连接与删除失败反馈",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/ConnectionManagementTabView.swift"
+      ],
+      "acceptance": "删除失败不能声称忘记成功；不误删独立监控/其他服务历史。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-004",
+        "TASK-006",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CON-07",
+      "group": "连接与网络",
+      "title": "请求隔离与响应预算",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/HTTPTransport.swift"
+      ],
+      "acceptance": "无凭据重定向泄漏；实际接收大小受限；取消传播且错误脱敏。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-005",
+        "TASK-031",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CON-08",
+      "group": "连接与网络",
+      "title": "共享限流、鉴权阻断与single flight",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/QuotaRequestLimiter.swift"
+      ],
+      "acceptance": "管理401/403、429和并发预算跨入口一致；force不能绕过。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-005",
+        "TASK-031",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "QUO-01",
+      "group": "额度",
+      "title": "账号清单与可用能力",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/CPAClient.swift"
+      ],
+      "acceptance": "空清单、禁用账号、可选能力失败可区分且账号身份稳定。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-007",
+        "TASK-008",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "QUO-02",
+      "group": "额度",
+      "title": "渐进刷新与每账号结果",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/CPAQuotaStore.swift"
+      ],
+      "acceptance": "先发布清单，每个结果到达即更新，慢/失败账号不清空其他成功值。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-008",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "QUO-03",
+      "group": "额度",
+      "title": "多供应商归一化与窗口",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/QuotaParsing.swift"
+      ],
+      "acceptance": "保留Codex窗口、code-review/额外限制以及现有插件、内建读取器所有路径。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-007",
+        "TASK-008",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "QUO-04",
+      "group": "额度",
+      "title": "零、未知、元数据与超额",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/Models.swift",
+        "Sources/CPAQuotaKit/QuotaParsing.swift",
+        "Sources/CPAQuotaKit/CPAClient.swift",
+        "Services/QuotaMonitor/cpa/client.go"
+      ],
+      "acceptance": "0有效；未知非0；超额真实值保留；无数值响应按ADR-004统一保留原数值。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-007",
+        "TASK-008",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "QUO-05",
+      "group": "额度",
+      "title": "来源、新鲜度与旧缓存",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/Models.swift"
+      ],
+      "acceptance": "live/passive、fetchedAt/observedAt分离；读缓存不更新观察时间。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-007",
+        "TASK-008",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "QUO-06",
+      "group": "额度",
+      "title": "搜索、提供方与状态筛选",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/QuotasOverviewTabView.swift"
+      ],
+      "acceptance": "邮箱/名称查询及现有分类、注意状态筛选组合正确。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-008",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "QUO-07",
+      "group": "额度",
+      "title": "已用/剩余显示与汇总",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/QuotasOverviewTabView.swift"
+      ],
+      "acceptance": "显示模式切换不修改底层数值；窗口不错误求和。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-008",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "QUO-08",
+      "group": "额度",
+      "title": "账号详情与单账号刷新",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/AccountDetailSheetView.swift"
+      ],
+      "acceptance": "全部窗口、指标、状态、时间、错误和修复入口可达。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-008",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "QUO-09",
+      "group": "额度",
+      "title": "取消、冷却与安全重试",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/CPAQuotaStore.swift"
+      ],
+      "acceptance": "取消保留已完成结果；用户重试遵守共享阻断和账号冷却。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-008",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "QUO-10",
+      "group": "额度",
+      "title": "单位、credits与服务限制",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/QuotaParsing.swift"
+      ],
+      "acceptance": "单位/币种按来源保真；余额不当订阅百分比；读数100%与明确limitReached区分。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-007",
+        "TASK-008",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CAP-01",
+      "group": "CAP用量",
+      "title": "插件能力与资源认证模式",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/CAPUsageTabView.swift"
+      ],
+      "acceptance": "插件缺失非0；anonymous/management显式选择，失败不自动加管理密钥。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-009",
+        "TASK-010",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CAP-02",
+      "group": "CAP用量",
+      "title": "30分钟、小时、天与日历月范围",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/CAPUsageWindow.swift"
+      ],
+      "acceptance": "30m、1–24h、1–7d、1–12 UTC日历月；月末/闰年/时区与整分钟边界正确。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-009",
+        "TASK-010",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CAP-03",
+      "group": "CAP用量",
+      "title": "模型样本概览与分组",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/CAPUsageTabView.swift"
+      ],
+      "acceptance": "provider/model/stream维度保留，样本完整性与来源可见。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-009",
+        "TASK-010",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CAP-04",
+      "group": "CAP用量",
+      "title": "月份服务端模型汇总",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/CAPUsageTabView.swift"
+      ],
+      "acceptance": "月份概览只用initial汇总，不自动扫描全历史或混入样本TPS。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-009",
+        "TASK-010",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CAP-05",
+      "group": "CAP用量",
+      "title": "initial/trends/groups/costs独立状态",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/CAPUsageStore.swift"
+      ],
+      "acceptance": "各资源独立窗口、时间、loading、error与快照；单区失败/重试局部化。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-009",
+        "TASK-010",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CAP-06",
+      "group": "CAP用量",
+      "title": "趋势图与完整数据表",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/CAPUsageDetailViews.swift"
+      ],
+      "acceptance": "可切指标和组；不可解析时间仍在完整表保留并提示。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-009",
+        "TASK-010",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CAP-07",
+      "group": "CAP用量",
+      "title": "分组分页与详情",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/CAPUsageDetailViews.swift"
+      ],
+      "acceptance": "页大小/上一页/下一页只请求groups，保留失败页的上下文。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-009",
+        "TASK-010",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CAP-08",
+      "group": "CAP用量",
+      "title": "费用、缺价与覆盖范围",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/CAPUsageCosts.swift"
+      ],
+      "acceptance": "估算、缺失价格和覆盖范围明确，未知价格不当免费。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-009",
+        "TASK-010",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CAP-09",
+      "group": "CAP用量",
+      "title": "请求记录分页及请求详情",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/CAPUsageDetailViews.swift"
+      ],
+      "acceptance": "请求状态、token、延迟、TTFT、模型、传输和来源字段可查。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-009",
+        "TASK-010",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CAP-10",
+      "group": "CAP用量",
+      "title": "管理统计与资源统计对比",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/CAPUsageTabView.swift"
+      ],
+      "acceptance": "两条来源独立，不用一处数据补成另一处的权威结果。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-009",
+        "TASK-010",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CAP-11",
+      "group": "CAP用量",
+      "title": "读取预算与完整性",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/CAPUsageClient.swift"
+      ],
+      "acceptance": "页数、条数、字节预算受控；offsetUnverified/truncated/singlePage语义保留。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-009",
+        "TASK-010",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CAP-12",
+      "group": "CAP用量",
+      "title": "统计公式与失败样本",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/CAPUsageAnalytics.swift"
+      ],
+      "acceptance": "有效输出/有效生成时间加权TPS；失败请求部分用量不混入成功速度。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-009",
+        "TASK-010",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CAP-13",
+      "group": "CAP用量",
+      "title": "范围选择、取消与旧窗口重试",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/CAPUsageCoordinator.swift"
+      ],
+      "acceptance": "改范围不自动请求；取消面板不改变窗口；失败区域按原失败窗口重试。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-009",
+        "TASK-010",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "DIA-01",
+      "group": "诊断与偏好",
+      "title": "管理连接及能力诊断",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/AccountsDiagnosticsTabView.swift"
+      ],
+      "acceptance": "连接失败、可选能力告警、空账号分别展示。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-011",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "DIA-02",
+      "group": "诊断与偏好",
+      "title": "账号授权与读取能力诊断",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/AccountDiagnosticPresentation.swift"
+      ],
+      "acceptance": "禁用、上游授权、支持状态和账号级错误不误判为管理密钥失效。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-011",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "DIA-03",
+      "group": "诊断与偏好",
+      "title": "原生错误文案与修复入口",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/ErrorPresentation.swift"
+      ],
+      "acceptance": "普通说明可操作；原始响应、凭据和邮箱不泄入诊断日志。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-011",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "DIA-04",
+      "group": "诊断与偏好",
+      "title": "系统/浅色/深色主题",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/AppearanceAndPreferences.swift"
+      ],
+      "acceptance": "主题持久化，前后台和配置变化保持一致。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-011",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "DIA-05",
+      "group": "诊断与偏好",
+      "title": "邮箱遮罩与显示偏好",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/ConnectionManagementTabView.swift"
+      ],
+      "acceptance": "额度、CAP、诊断及系统展示按同一隐私策略处理。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-011",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "DIA-06",
+      "group": "诊断与偏好",
+      "title": "只读管理边界",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/CPAClient.swift"
+      ],
+      "acceptance": "保留原有读取能力；不新增OAuth登录、启停上游账号或额度重置操作。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-011",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-01",
+      "group": "AI对话",
+      "title": "管理接口发现推理Key",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/CPAAPIKeyDiscovery.swift"
+      ],
+      "acceptance": "按对应端点已验证的404/501接口不可用分支发现；401/403单独拒绝；不能把管理密钥当推理密钥。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-013",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-02",
+      "group": "AI对话",
+      "title": "手填、选择、保存及移除推理Key",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/Chat/ChatSettingsView.swift"
+      ],
+      "acceptance": "密钥作用域与保存/删除失败真实，临时模式不落盘。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-013",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-03",
+      "group": "AI对话",
+      "title": "模型目录与新会话模型策略",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/CPAModelCatalogClient.swift"
+      ],
+      "acceptance": "刷新、固定/策略选择、模型消失与所记档位按当前行为恢复。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-013",
+        "TASK-015",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-04",
+      "group": "AI对话",
+      "title": "会话列表、搜索、新建、重命名与删除",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/Chat/ChatWorkspaceView.swift"
+      ],
+      "acceptance": "创建、重命名、删除与标题/正文包含搜索；中文子串、代码、%/_字面值及组合字符符合冻结Unicode合同，搜索不读取图片；不得用分词FTS结果直接替代。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-012",
+        "TASK-017",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-05",
+      "group": "AI对话",
+      "title": "逐会话草稿与编辑取消",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/Chat/ChatComposerView.swift"
+      ],
+      "acceptance": "切页保留文字和附件，编辑取消恢复；进程死亡持久恢复作为Android质量改进。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-012",
+        "TASK-017",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-06",
+      "group": "AI对话",
+      "title": "图片选择、移除、缩略图与纯图片提问",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/Chat/ChatComposerView.swift"
+      ],
+      "acceptance": "至少保留源端最多4张及纯图发送能力，大小/格式边界与取消可靠。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-012",
+        "TASK-017",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-07",
+      "group": "AI对话",
+      "title": "双协议流式生成与完成判定",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaChat/AnyLanguageModelChatEngine.swift"
+      ],
+      "acceptance": "Chat Completions与Anthropic Messages均完整；EOF不冒充完成；不可达分支不算已交付。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-014",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-08",
+      "group": "AI对话",
+      "title": "推理档位与兼容降级",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaChat/ChatReasoningPolicy.swift"
+      ],
+      "acceptance": "automatic/off/low/medium/high/xhigh/max及实际applied/downgraded/omitted有明示。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-013",
+        "TASK-015",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-09",
+      "group": "AI对话",
+      "title": "停止、续写、attempt及用量累积",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaChat/ChatContinuation.swift"
+      ],
+      "acceptance": "父消息/尝试关联、边界去重、Unicode和用量累计正确。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-016",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-10",
+      "group": "AI对话",
+      "title": "编辑重发与重新生成",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/Chat/ChatMessageView.swift"
+      ],
+      "acceptance": "确认及分支/替换语义明确；旧任务和排队写入不得覆盖新回复。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-016",
+        "TASK-017",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-11",
+      "group": "AI对话",
+      "title": "复制、删除消息与加入记忆",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/Chat/ChatMessageView.swift"
+      ],
+      "acceptance": "动作全部可达，删除确认、复制反馈和副作用状态真实。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-017",
+        "TASK-019",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-12",
+      "group": "AI对话",
+      "title": "全局指令与会话system prompt",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaChat/ChatPromptBuilder.swift"
+      ],
+      "acceptance": "修改缓冲与持久化正确；明确跨服务作用域和发送内容边界。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-013",
+        "TASK-019",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-13",
+      "group": "AI对话",
+      "title": "联网搜索五提供方与独立凭据",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaChat/ChatSearch.swift"
+      ],
+      "acceptance": "迁移源码五提供方全部能力；搜索未配置、失败、零结果、中断分别建模。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-018",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-14",
+      "group": "AI对话",
+      "title": "来源展示与检索快照",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaChat/ChatPromptBuilder.swift"
+      ],
+      "acceptance": "保留来源、完成标记和冻结query；外部文本按不可信引用隔离。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-018",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-15",
+      "group": "AI对话",
+      "title": "记忆新增编辑删除置顶及开关",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/Chat/ChatLibraryViews.swift"
+      ],
+      "acceptance": "加入记忆、手工编辑、置顶排序、关闭与加载失败安全默认可验收。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-019",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-16",
+      "group": "AI对话",
+      "title": "斜杠技能CRUD与命令冲突",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/Chat/ChatLibraryViews.swift"
+      ],
+      "acceptance": "技能提示词展开快照固定；重复命令拒绝，后改技能不改变原轮重试语义。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-019",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-17",
+      "group": "AI对话",
+      "title": "原生富文本、代码、表格和公式",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/Chat/ChatMessageView.swift"
+      ],
+      "acceptance": "保留实际渲染能力和文本选择/复制，长流式下历史不整体重建。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-017",
+        "TASK-030",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-18",
+      "group": "AI对话",
+      "title": "静态HTML预览与源代码",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/Chat/IsolatedChatHTMLWebView.swift"
+      ],
+      "acceptance": "脚本、网络、本地文件、原生桥和导航隔离有真实负例，保留源代码查看/复制。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-020",
+        "TASK-031",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-19",
+      "group": "AI对话",
+      "title": "自动标题与用户标题优先",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaChat/ChatWorkspaceModel.swift"
+      ],
+      "acceptance": "标题开关与失败安全；迟到标题不覆盖用户已改标题。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-019",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-20",
+      "group": "AI对话",
+      "title": "后台有界收尾与完成通知",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaChat/ChatBackgroundRunner.swift"
+      ],
+      "acceptance": "退后台先保存、最多30秒尽力收尾、可更早中断；通知不带会话正文。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-021",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-21",
+      "group": "AI对话",
+      "title": "跨服务器历史发送确认",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaChat/ChatModels.swift"
+      ],
+      "acceptance": "确认绑定服务器和credential revision，旧确认失效且不损坏历史。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-016",
+        "TASK-031",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-22",
+      "group": "AI对话",
+      "title": "持久化失败与删除全部unknown恢复",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaChat/ChatPersistence.swift"
+      ],
+      "acceptance": "生成状态与保存状态独立；未知删除/写入结果保留并可核对。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-012",
+        "TASK-016",
+        "TASK-021",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-23",
+      "group": "AI对话",
+      "title": "Token用量与省略历史提示",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaChat/ChatModels.swift"
+      ],
+      "acceptance": "输入/输出/推理用量和history omission保真；字符预算不误称token预算。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-016",
+        "TASK-017",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "CHA-24",
+      "group": "AI对话",
+      "title": "冷启动中断恢复与迟到拒绝",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "semantic_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaChat/ChatWorkspaceModel.swift"
+      ],
+      "acceptance": "未完成streaming恢复为interrupted；不自动重复计费请求。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-016",
+        "TASK-021",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "MON-01",
+      "group": "监控",
+      "title": "独立监控连接与凭据",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/MonitoringTabView.swift"
+      ],
+      "acceptance": "临时/记住、验证/更换/忘记独立于CPA连接，失败保留原操作能力。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-022",
+        "TASK-024",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "MON-02",
+      "group": "监控",
+      "title": "授权来源、账号和容量发现",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/MonitoringCapabilities.swift"
+      ],
+      "acceptance": "capabilities鉴权只读；旧404有升级提示；预检不冒充名额预留。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-022",
+        "TASK-023",
+        "TASK-024",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "MON-03",
+      "group": "监控",
+      "title": "账号选择与有限租约",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/MonitoringTabView.swift"
+      ],
+      "acceptance": "现有1/4/8小时、最多5账号约束及来源授权有合同和UI。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-022",
+        "TASK-023",
+        "TASK-024",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "MON-04",
+      "group": "监控",
+      "title": "开始、取消启动与幂等注册",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/MonitoringStore.swift"
+      ],
+      "acceptance": "取消先于迟到注册安全，重复启动不创建重复订阅。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-022",
+        "TASK-023",
+        "TASK-024",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "MON-05",
+      "group": "监控",
+      "title": "手动刷新与控制预算",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/MonitoringClient.swift"
+      ],
+      "acceptance": "202只表示接受意图；刷新预算不等于采样频率。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-022",
+        "TASK-023",
+        "TASK-024",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "MON-06",
+      "group": "监控",
+      "title": "状态核对与来源缓存读取",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/MonitoringSnapshot.swift"
+      ],
+      "acceptance": "状态、revision、sequence和新鲜度保真；缓存读取不触发采集。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-022",
+        "TASK-023",
+        "TASK-024",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "MON-07",
+      "group": "监控",
+      "title": "远端停止、本机关闭与忘记",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/MonitoringTabView.swift"
+      ],
+      "acceptance": "三种动作分别展示结果；远端未知结果保留恢复记录。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-022",
+        "TASK-023",
+        "TASK-024",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "MON-08",
+      "group": "监控",
+      "title": "投递端点轮换与CAS",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaKit/MonitoringSession.swift"
+      ],
+      "acceptance": "Android端点token不透明保真，旧回调不能替换新revision。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-022",
+        "TASK-023",
+        "TASK-024",
+        "TASK-025",
+        "TASK-026",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "MON-09",
+      "group": "监控",
+      "title": "原服务会话与恢复诊断",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/MonitoringTabView.swift"
+      ],
+      "acceptance": "更换连接后的detached handle、持久恢复记录仍可查询/停止/清除终态。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-022",
+        "TASK-023",
+        "TASK-024",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "MON-10",
+      "group": "监控",
+      "title": "持久取消、墓碑与重放防护",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Services/QuotaMonitor/service.go"
+      ],
+      "acceptance": "不擅自添加TTL或丢失跨身份保护；重启不续租。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-022",
+        "TASK-023",
+        "TASK-024",
+        "TASK-031",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "MON-11",
+      "group": "监控",
+      "title": "iOS v1与Android新协议兼容",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Services/QuotaMonitor/capabilities.go"
+      ],
+      "acceptance": "新增协议经协商，旧客户端行为维持；未部署新服务时Android明确不可新建而非伪成功。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-022",
+        "TASK-023",
+        "TASK-024",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "MON-12",
+      "group": "监控",
+      "title": "Android推送与权限能力状态",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Services/QuotaMonitor/delivery.go"
+      ],
+      "acceptance": "采集/平台接受/设备显示分离；GMS完整投递及无GMS明确降级。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-001",
+        "TASK-022",
+        "TASK-025",
+        "TASK-026",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "WID-01",
+      "group": "系统展示",
+      "title": "小组件共享默认关闭",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/QuotaWidgetPublisher.swift"
+      ],
+      "acceptance": "仅显式开启后投影；关停或切来源立即使旧展示不可用。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-027",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "WID-02",
+      "group": "系统展示",
+      "title": "概况与账号主要读数选择",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaActivity/CPAQuotaWidget.swift"
+      ],
+      "acceptance": "账号由opaque ID选择，失效选择不静默切换到其他账号。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-027",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "WID-03",
+      "group": "系统展示",
+      "title": "可调整尺寸与原生替代形态",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaActivity/CPAQuotaWidget.swift"
+      ],
+      "acceptance": "Android桌面小组件支持紧凑/中/大空间；Apple锁屏形态映射有说明。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-027",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "WID-04",
+      "group": "系统展示",
+      "title": "新鲜度、未知与更新时间",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaActivity/QuotaWidgetSnapshot.swift"
+      ],
+      "acceptance": "更新调度不保证实时；过期和无观察时间不伪装为新结果。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-027",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "WID-05",
+      "group": "系统展示",
+      "title": "小组件与监控通知深链",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaActivity/CPAQuotaDeepLink.swift"
+      ],
+      "acceptance": "点击恢复正确工作区/来源，冷启动失效ID安全。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-027",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "WID-06",
+      "group": "系统展示",
+      "title": "系统展示隐私与别名",
+      "requirement_kind": "ios_parity",
+      "release_required": true,
+      "parity_class": "platform_equivalent",
+      "source_paths": [
+        "Sources/CPAQuotaUI/AppearanceAndPreferences.swift"
+      ],
+      "acceptance": "安全投影、邮箱遮罩、别名和删除/换来源清理一致；锁屏默认最小信息。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-027",
+        "TASK-033",
+        "TASK-034"
+      ]
+    },
+    {
+      "id": "AND-01",
+      "group": "Android质量",
+      "title": "SDK与工具链可重现",
+      "requirement_kind": "android_requirement",
+      "release_required": true,
+      "parity_class": "platform_requirement",
+      "source_paths": [],
+      "official_sources": [
+        "https://developer.android.com/about/versions/17/setup-sdk"
+      ],
+      "acceptance": "min26/compile37/target37作为候选，锁定实测兼容的JDK/Gradle/AGP/Kotlin/Compose矩阵。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-002",
+        "TASK-033"
+      ]
+    },
+    {
+      "id": "AND-02",
+      "group": "Android质量",
+      "title": "窗口、铰链、IME与现代返回",
+      "requirement_kind": "android_requirement",
+      "release_required": true,
+      "parity_class": "platform_requirement",
+      "source_paths": [],
+      "official_sources": [
+        "https://developer.android.com/develop/adaptive-apps/guides/foldables/make-your-app-fold-aware"
+      ],
+      "acceptance": "真实窗口缩放/折叠/IME/back不能丢状态或重复请求。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-003",
+        "TASK-028",
+        "TASK-033"
+      ]
+    },
+    {
+      "id": "AND-03",
+      "group": "Android质量",
+      "title": "进程死亡与任务所有权",
+      "requirement_kind": "android_requirement",
+      "release_required": true,
+      "parity_class": "platform_requirement",
+      "source_paths": [],
+      "official_sources": [
+        "https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-savedstate"
+      ],
+      "acceptance": "持久状态、轻量导航状态、会话任务区分；system kill与force-stop分开验证。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-021",
+        "TASK-029",
+        "TASK-033"
+      ]
+    },
+    {
+      "id": "AND-04",
+      "group": "Android质量",
+      "title": "Keystore和失败恢复",
+      "requirement_kind": "android_requirement",
+      "release_required": true,
+      "parity_class": "platform_requirement",
+      "source_paths": [],
+      "official_sources": [
+        "https://developer.android.com/privacy-and-security/keystore"
+      ],
+      "acceptance": "凭据加密、失效分类和重新连接不导致聊天库被清空。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-004",
+        "TASK-029",
+        "TASK-031",
+        "TASK-033"
+      ]
+    },
+    {
+      "id": "AND-05",
+      "group": "Android质量",
+      "title": "云备份与设备转移边界",
+      "requirement_kind": "android_requirement",
+      "release_required": true,
+      "parity_class": "platform_requirement",
+      "source_paths": [],
+      "official_sources": [
+        "https://developer.android.com/identity/data/autobackup"
+      ],
+      "acceptance": "旧/新备份规则、D2D及密钥缺失恢复均有验证。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-004",
+        "TASK-029",
+        "TASK-031",
+        "TASK-033"
+      ]
+    },
+    {
+      "id": "AND-06",
+      "group": "Android质量",
+      "title": "局域网运行时权限",
+      "requirement_kind": "android_requirement",
+      "release_required": true,
+      "parity_class": "platform_requirement",
+      "source_paths": [],
+      "official_sources": [
+        "https://developer.android.com/privacy-and-security/local-network-permission"
+      ],
+      "acceptance": "Android17 target37 LAN拒绝/撤销有独立状态且不放松TLS。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-002",
+        "TASK-006",
+        "TASK-029",
+        "TASK-033"
+      ]
+    },
+    {
+      "id": "AND-07",
+      "group": "Android质量",
+      "title": "通知、GMS与后台限制",
+      "requirement_kind": "android_requirement",
+      "release_required": true,
+      "parity_class": "platform_requirement",
+      "source_paths": [],
+      "official_sources": [
+        "https://firebase.google.com/docs/cloud-messaging/android/get-started"
+      ],
+      "acceptance": "通知权限、投递能力、监控运行分开；无GMS不误报全功能推送。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-021",
+        "TASK-026",
+        "TASK-029",
+        "TASK-033"
+      ]
+    },
+    {
+      "id": "AND-08",
+      "group": "Android质量",
+      "title": "原生无障碍与中文文案",
+      "requirement_kind": "android_requirement",
+      "release_required": true,
+      "parity_class": "platform_requirement",
+      "source_paths": [],
+      "official_sources": [
+        "https://developer.android.com/guide/topics/ui/accessibility/apps"
+      ],
+      "acceptance": "TalkBack、最大支持字体、48dp触控、对比度、读序与图表文字等价。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-028",
+        "TASK-033"
+      ]
+    },
+    {
+      "id": "AND-09",
+      "group": "Android质量",
+      "title": "数据库和附件迁移一致性",
+      "requirement_kind": "android_requirement",
+      "release_required": true,
+      "parity_class": "platform_requirement",
+      "source_paths": [],
+      "official_sources": [
+        "https://developer.android.com/training/data-storage/room/migrating-db-versions"
+      ],
+      "acceptance": "导出schema；文件与DB恢复、升级保留历史和非破坏迁移通过。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-012",
+        "TASK-029",
+        "TASK-033"
+      ]
+    },
+    {
+      "id": "AND-10",
+      "group": "Android质量",
+      "title": "Release性能与资源预算",
+      "requirement_kind": "android_requirement",
+      "release_required": true,
+      "parity_class": "platform_requirement",
+      "source_paths": [],
+      "official_sources": [
+        "https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview"
+      ],
+      "acceptance": "固定真机、数据集、release profile及网络/内存/写放大测量有可追踪证据。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-030",
+        "TASK-033"
+      ]
+    },
+    {
+      "id": "AND-11",
+      "group": "Android质量",
+      "title": "签名、升级与隐私发布",
+      "requirement_kind": "android_requirement",
+      "release_required": true,
+      "parity_class": "platform_requirement",
+      "source_paths": [],
+      "official_sources": [
+        "https://support.google.com/googleplay/android-developer/answer/11926878"
+      ],
+      "acceptance": "签名APK/AAB、升级、声明和包身份固定；候选SHA证据齐全。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-032",
+        "TASK-033"
+      ]
+    },
+    {
+      "id": "ENH-01",
+      "group": "基线外增强",
+      "title": "跨端历史交换与导入导出",
+      "requirement_kind": "enhancement",
+      "release_required": false,
+      "parity_class": "new_capability",
+      "source_paths": [],
+      "acceptance": "源版本未证明存在原生导出入口；额外设计versioned交换包、附件校验和默认无密钥导出。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-035"
+      ]
+    },
+    {
+      "id": "ENH-02",
+      "group": "基线外增强",
+      "title": "跨进程持久聊天作业",
+      "requirement_kind": "enhancement",
+      "release_required": false,
+      "parity_class": "new_capability",
+      "source_paths": [],
+      "acceptance": "需要新服务端job/status/cancel合同，超出iOS当前最多约30秒best effort。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-036"
+      ]
+    },
+    {
+      "id": "ENH-03",
+      "group": "基线外增强",
+      "title": "无GMS实时厂商推送",
+      "requirement_kind": "enhancement",
+      "release_required": false,
+      "parity_class": "new_capability",
+      "source_paths": [],
+      "acceptance": "仅在明确支持的厂商/分发渠道与测试设备上扩展，不冒充FCM替代已存在。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-037"
+      ]
+    },
+    {
+      "id": "ENH-04",
+      "group": "基线外增强",
+      "title": "跨设备云同步",
+      "requirement_kind": "enhancement",
+      "release_required": false,
+      "parity_class": "new_capability",
+      "source_paths": [],
+      "acceptance": "另立身份、端到端加密、冲突合并与删除语义；不作为本次完全移植前置。",
+      "implementation_status": "not_started",
+      "evidence": [],
+      "work_items": [
+        "TASK-038"
+      ]
+    }
+  ]
+}
