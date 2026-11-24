@@ -1,6 +1,6 @@
 # Instructions for all developers and coding agents
 
-This is the native Android migration of CPA Quota. The Project Constitution is authoritative. Read PROJECT_CONSTITUTION.md, docs/ARCHITECTURE.md, docs/MIGRATION_PLAN.md, docs/TASK_BREAKDOWN.md and docs/SOURCE_AUDIT.md before acting.
+This is the native Android migration of CPA Quota. Use the selected plan in [PR #9](https://github.com/rinmashiro0529/cpa-quota-Android/pull/9); [README.md](README.md) links its pinned revision. Start with the plan index, then read the task card, its dependencies and the agent playbook. Use the selected plan's work-item IDs rather than the retired issue queue.
 
 ## Before a task
 1. Identify the GitHub issue and acceptance criteria.
