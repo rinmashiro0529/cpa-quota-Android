@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "plan_id": "native-android-independent-20261125",
+  "version": "1.0.0",
+  "selection_status": "candidate_not_selected",
+  "adoption_record": null,
+  "created_date": "2026-11-25",
+  "timezone": "Asia/Shanghai",
+  "target_repository": "rinmashiro0529/cpa-quota-Android",
+  "isolated_path": "proposals/2026-11-25-native-android-independent",
+  "source_repository": "rinmashiro0529/cpa-quota-ios",
+  "source_commit": "80beea9ed251a628307825cba99290b5f246575b",
+  "implementation_status": "not_started",
+  "entry_points": {
+    "overview": "README.md",
+    "scope": "01-charter-and-scope.md",
+    "parity": "02-source-parity.md",
+    "architecture": "03-architecture.md",
+    "tasks": "07-delivery-plan.md",
+    "gates": "08-verification-and-release.md",
+    "agents": "09-agent-playbook.md"
+  },
+  "provenance": "Independent candidate based on user request, frozen iOS source and official platform references. Existing Android planning contents were not read. Target file metadata was read for preservation only.",
+  "verification_limit": "Plan validator verifies document structure, coverage and content integrity only. No app/service runtime validation is claimed.",
+  "integrity_policy": "files excludes this manifest to avoid self-hash recursion. Git commit binds the manifest; all other candidate files have SHA-256 and Git blob SHA.",
+  "counts": {
+    "features_total": 97,
+    "features_required": 93,
+    "features_optional": 4,
+    "tasks_total": 38,
+    "tasks_required": 34,
+    "tasks_optional": 4
+  },
+  "files": [
+    {
+      "path": "01-charter-and-scope.md",
+      "bytes": 7031,
+      "sha256": "3e23c556a2f2ede3c4040053d93848160c1087eff6c42183bc07507e146f995e",
+      "git_blob_sha": "6bc6086c766dad26bf16229924b98dde4b2778c6"
+    },
+    {
+      "path": "02-source-parity.md",
+      "bytes": 38371,
+      "sha256": "f9e911983e21828b55d70b89970b1ac5cc7d6f8dc1e860706e43bf176aa42cd5",
+      "git_blob_sha": "1fd8b4f54b80936a96e1f4b494b3322416f6c833"
+    },
+    {
+      "path": "03-architecture.md",
+      "bytes": 11643,
+      "sha256": "d23f0d430a50f8517b46ad525e864fc1d6ab23574fde547cf05b0e92c4a7242e",
+      "git_blob_sha": "814d01505ebb06dc26e00ad78934a52cef0983c2"
+    },
+    {
+      "path": "04-protocols-and-monitoring.md",
+      "bytes": 71024,
+      "sha256": "3110c6d019de0cf0eaaeee638924b668dc1bb05cf8c0107518fa8a36139ebdcf",
+      "git_blob_sha": "9cc9bb3939eb0e289c66de70d4e439a3284e0383"
+    },
+    {
+      "path": "05-chat-and-storage.md",
+      "bytes": 67447,
+      "sha256": "e255e7dca0afdbdde45dd716892525985ab256e372cc51997d447d5491e59a6b",
+      "git_blob_sha": "d1ee101df0fbec87da3c9cc37ff0178b17ced1cb"
+    },
+    {
+      "path": "06-android-platform-security.md",
+      "bytes": 54027,
+      "sha256": "eb5d62728828821ef673ddae61dbc2effa7e0a4601b4373d5b8f9470227f497e",
+      "git_blob_sha": "c6fa27a6766c37c1eaaaf3b037193f1111a3422c"
+    },
+    {
+      "path": "07-delivery-plan.md",
+      "bytes": 41984,
+      "sha256": "ec13910c58ed9e882f68dc4b6b8d8aa1514f4e6317df68a37ad375119f65a108",
+      "git_blob_sha": "6eda620cdca968a5dbd0467e450827b880e34c4c"
+    },
+    {
+      "path": "08-verification-and-release.md",
+      "bytes": 10761,
+      "sha256": "684a116037cd7222d6d8985e8d85bce31b18e16b3fc0f203e8dc3a17a3663173",
+      "git_blob_sha": "e371bc8d83b3633b77c1c7acf17d7e9a9052c96e"
+    },
+    {
+      "path": "09-agent-playbook.md",
+      "bytes": 7338,
+      "sha256": "c9bc4e45ae5b569606003920ccc9b0f094feb0a4b6c176ad672aacbac3999a4a",
+      "git_blob_sha": "e681583608087e1d692b89f9f3ff3c78870c22bf"
+    },
+    {
+      "path": "10-decisions-risks-and-references.md",
+      "bytes": 11460,
+      "sha256": "0926d586b0faed2b7faf3b8fbf59e66ebd02cfbc551fcfb6f9c1604d57947730",
+      "git_blob_sha": "4154afe0a7263c773a3b9e554b6c8243d4dabc3a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5643,
+      "sha256": "bc0228d66cf4e772394d01e8fdeea6669c32da23b4663636135ecef42835dc9f",
+      "git_blob_sha": "f9f9ee6e8d58897d6eac54b21de6e8bf45c815f9"
+    },
+    {
+      "path": "manifests/evidence-template.json",
+      "bytes": 1912,
+      "sha256": "a775a4978f0ab4308df21670a8752ca07367420f59dfc98fd9e34ba124b8c468",
+      "git_blob_sha": "41802fee2f47c2caac609b0a224f0fe62d956031"
+    },
+    {
+      "path": "manifests/feature-parity.json",
+      "bytes": 60003,
+      "sha256": "2ad081fb86469d6eabe513821053563a79e191cccc3d106f33957a0e63479ee8",
+      "git_blob_sha": "065a80333890d84d5f046863dc4b9a6714ea2a58"
+    },
+    {
+      "path": "manifests/source-baseline.json",
+      "bytes": 24868,
+      "sha256": "6a7bddb3a465688ca8009a9fa210e7cc571a4b58208b1ad261d393cb95e8d817",
+      "git_blob_sha": "82a6ab4db976b5b35af714a55687f7c06e658d3a"
+    },
+    {
+      "path": "manifests/target-preservation.json",
+      "bytes": 1879,
+      "sha256": "62413f9f658a1364daab2add22858a684538965eebbcce6487d2798370001672",
+      "git_blob_sha": "e48713e4380bb9eb4efac1c47298befbb6646914"
+    },
+    {
+      "path": "manifests/work-items.json",
+      "bytes": 46437,
+      "sha256": "76ac2823b939651b4edfb332a17f8501b1cd2b60c5770daafd0e8708a79b672b",
+      "git_blob_sha": "c4c2a8b9959ea81fd4fa473c2b87d1e592b72cfc"
+    },
+    {
+      "path": "templates/implementation-pr.md",
+      "bytes": 1214,
+      "sha256": "4cec2ac43b018c8c9d4630f1a9bbb00d04ba440b0a74964eef44780256d9c50d",
+      "git_blob_sha": "004eaddf18750dd2515303b64ee017bf7565d2bc"
+    },
+    {
+      "path": "templates/task-brief.md",
+      "bytes": 1178,
+      "sha256": "c207e0eda957007a30c980ba373bba87ea824a0d18487606ff42f4198a297c1b",
+      "git_blob_sha": "a5e974e97112c874d585d5feb6b0a98e06e9366a"
+    },
+    {
+      "path": "tools/render_indexes.py",
+      "bytes": 13331,
+      "sha256": "e1943ba2b3538c9c10a155aaa95eb0c6412bc94356498bd38fa90ff78d463b3f",
+      "git_blob_sha": "33847704c55cf382199e252a219e64b6ccec0e3b"
+    },
+    {
+      "path": "tools/update_integrity.py",
+      "bytes": 1565,
+      "sha256": "1fbf2828d17380ab9be3786706062fc9346d9e8c9263241ef2d3bb882a7a12d1",
+      "git_blob_sha": "c7ec81d19b85e034140c4e2913e4c7d4c9febf0a"
+    },
+    {
+      "path": "tools/validate_plan.py",
+      "bytes": 9722,
+      "sha256": "a397575ee4a094d7d3019f6ba4dcb0351928c8b888cfe7d71ace7c1e1dda7a6d",
+      "git_blob_sha": "f9636b2b4d0cd7838cd2179fb2319fb494046a93"
+    }
+  ]
+}

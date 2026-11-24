@@ -1,0 +1,770 @@
+{
+  "schema_version": 1,
+  "plan_id": "native-android-independent-20261125",
+  "observed_at_utc": "2026-11-24T16:49:51Z",
+  "display_timezone": "Asia/Shanghai",
+  "display_date": "2026-11-25",
+  "source_repository": "rinmashiro0529/cpa-quota-ios",
+  "source_commit": "80beea9ed251a628307825cba99290b5f246575b",
+  "source_url": "https://github.com/rinmashiro0529/cpa-quota-ios/tree/80beea9ed251a628307825cba99290b5f246575b",
+  "contract_fixture_root": "Tests/ContractFixtures",
+  "open_prs": [
+    {
+      "number": 33,
+      "state": "open",
+      "head": "a1ad2537ea70cc6b755676de064ae3ddee12b3ba",
+      "base": "main",
+      "scope": "UI test snapshot race; not part of frozen source"
+    },
+    {
+      "number": 34,
+      "state": "open",
+      "head": "8c17687d8a893297585da51a3e7c3c4b54153d5a",
+      "base": "fix/ui-test-snapshot-race",
+      "scope": "Pending attachment/index/lazy-load proposal; not part of frozen source"
+    }
+  ],
+  "observed_ci": {
+    "run_id": 45400721543,
+    "head_sha": "80beea9ed251a628307825cba99290b5f246575b",
+    "conclusion": "failure",
+    "failed_job": "Native UI (Xcode 27.1, iPhone Duo, shard 2/3)",
+    "passed_scopes": [
+      "Go tests/race/vet",
+      "Swift package and Release build",
+      "iPhone 18 Pro native UI"
+    ],
+    "url": "https://github.com/rinmashiro0529/cpa-quota-ios/actions/runs/45400721543",
+    "execution_by_this_task": false
+  },
+  "verification_scope": "Source review, repository metadata and existing CI observation only; no Android build, iOS/Go rerun, live service probe, signing, deployment or device validation.",
+  "source_inventory": [
+    {
+      "path": "Package.swift",
+      "git_blob_sha": "084fc123b87004b896b5e5241c140cf9c9200b9f",
+      "bytes": 2477
+    },
+    {
+      "path": "README.md",
+      "git_blob_sha": "5e1c5145f2996fa7f28c9764fbd2ef4c4630e425",
+      "bytes": 8284
+    },
+    {
+      "path": "Services/QuotaMonitor/apns/provider.go",
+      "git_blob_sha": "2d0092c92224d4f32f7651f7385110e3fca02760",
+      "bytes": 6702
+    },
+    {
+      "path": "Services/QuotaMonitor/apns/provider_test.go",
+      "git_blob_sha": "0949a3a9059164447659e98d8cf1487e16ca017c",
+      "bytes": 6243
+    },
+    {
+      "path": "Services/QuotaMonitor/apns/rejection_test.go",
+      "git_blob_sha": "fc6614906ed5b768bb3bf3b996fedcd60f606ac2",
+      "bytes": 3340
+    },
+    {
+      "path": "Services/QuotaMonitor/apply_persistence_regression_test.go",
+      "git_blob_sha": "141bd2cb4923e5cc1e2cde27437f85a2f74362fd",
+      "bytes": 11487
+    },
+    {
+      "path": "Services/QuotaMonitor/audit_regression_test.go",
+      "git_blob_sha": "656068a02ed732228dd79baf4624d82ff96431d5",
+      "bytes": 12153
+    },
+    {
+      "path": "Services/QuotaMonitor/capabilities.go",
+      "git_blob_sha": "7f4c67b834990d151b5902f41cb6f9f4e8ba1355",
+      "bytes": 3833
+    },
+    {
+      "path": "Services/QuotaMonitor/capabilities_test.go",
+      "git_blob_sha": "13fcb83690fc990cda65f70e3735026503e3bc2e",
+      "bytes": 10174
+    },
+    {
+      "path": "Services/QuotaMonitor/capacity.go",
+      "git_blob_sha": "91a9b59be4e0903a1a0559e8383a65c3a1c422f4",
+      "bytes": 4588
+    },
+    {
+      "path": "Services/QuotaMonitor/capacity_test.go",
+      "git_blob_sha": "95d27496e07f131927b70553f82f8368c8546af9",
+      "bytes": 10093
+    },
+    {
+      "path": "Services/QuotaMonitor/cmd/quota-monitor/main.go",
+      "git_blob_sha": "9fa18cf10e0098a5cad0b9678cf4bf48f4124eed",
+      "bytes": 1922
+    },
+    {
+      "path": "Services/QuotaMonitor/cmd/quota-monitor/main_test.go",
+      "git_blob_sha": "a1a5f38f6bd4439c56c1e06f1345ab56740effa7",
+      "bytes": 3083
+    },
+    {
+      "path": "Services/QuotaMonitor/config.example.json",
+      "git_blob_sha": "571c0995f1a0f5d786141d8bdff4cf4cd6e02857",
+      "bytes": 1133
+    },
+    {
+      "path": "Services/QuotaMonitor/config.go",
+      "git_blob_sha": "e6b30bddd4978dc494b619815ca996dbf1f32eda",
+      "bytes": 5972
+    },
+    {
+      "path": "Services/QuotaMonitor/config_test.go",
+      "git_blob_sha": "29ce2788918c71e192f0db2c86f8fc42a05225ac",
+      "bytes": 2552
+    },
+    {
+      "path": "Services/QuotaMonitor/cpa/client.go",
+      "git_blob_sha": "527bd7c61fea4ed3b54dacaa827a2e5b91194f8f",
+      "bytes": 18544
+    },
+    {
+      "path": "Services/QuotaMonitor/cpa/client_test.go",
+      "git_blob_sha": "efeee6bff3cfa0d4172d78ceefb69d12a74392b7",
+      "bytes": 18663
+    },
+    {
+      "path": "Services/QuotaMonitor/cpa/config.go",
+      "git_blob_sha": "4f36d1309cfb7bf5753b76d636ff6905d51ca7e1",
+      "bytes": 5853
+    },
+    {
+      "path": "Services/QuotaMonitor/cpa/config_test.go",
+      "git_blob_sha": "ab1c036f5e3c27917fc49d2ff8d92f3b6067394f",
+      "bytes": 3276
+    },
+    {
+      "path": "Services/QuotaMonitor/cpa/contract_test.go",
+      "git_blob_sha": "53a759c1f9d26ef10f7ae8ccc6d04a81a845673a",
+      "bytes": 23693
+    },
+    {
+      "path": "Services/QuotaMonitor/cpa/envelope.go",
+      "git_blob_sha": "8a5ef1322dbcc2b6d94476f7296cce2b51f6bf90",
+      "bytes": 2957
+    },
+    {
+      "path": "Services/QuotaMonitor/cpa/envelope_test.go",
+      "git_blob_sha": "3f5ae1bbd2c98b952da3246c6693590ad41ce6f6",
+      "bytes": 4581
+    },
+    {
+      "path": "Services/QuotaMonitor/cpa/passive.go",
+      "git_blob_sha": "637cc7931cb7d5bdac3d627bd99ff23fcf9d20ee",
+      "bytes": 2321
+    },
+    {
+      "path": "Services/QuotaMonitor/cpa/selection_test.go",
+      "git_blob_sha": "b875420d65d64eae0ce6ee5b71c153d4baa82994",
+      "bytes": 2842
+    },
+    {
+      "path": "Services/QuotaMonitor/delivery.go",
+      "git_blob_sha": "c82f5d84c230d0b0318c660a78b300608b6731c2",
+      "bytes": 2110
+    },
+    {
+      "path": "Services/QuotaMonitor/delivery_regression_test.go",
+      "git_blob_sha": "a6b5257ba6f7a11262fe06c00f6e6c9a7629cfb5",
+      "bytes": 10289
+    },
+    {
+      "path": "Services/QuotaMonitor/deploy/config.placeholder.json",
+      "git_blob_sha": "f776cd1cc9316ebcb721b20a1d7518d9cd451618",
+      "bytes": 820
+    },
+    {
+      "path": "Services/QuotaMonitor/deploy/nginx-http-limits.conf",
+      "git_blob_sha": "129f5bbd768fdb73a8ba5370048748079e790304",
+      "bytes": 633
+    },
+    {
+      "path": "Services/QuotaMonitor/deploy/nginx-location.conf",
+      "git_blob_sha": "2963fb348d676f63f2618ff8e08c6526bc4d855a",
+      "bytes": 890
+    },
+    {
+      "path": "Services/QuotaMonitor/deploy/nginx-prefix-location.conf",
+      "git_blob_sha": "d42cd671141b2d417052a14fbe76e5b4e8307a91",
+      "bytes": 849
+    },
+    {
+      "path": "Services/QuotaMonitor/deploy/quota-monitor-start",
+      "git_blob_sha": "e687fe57dd62382b9a8fa941c351ed7be73baf6b",
+      "bytes": 517
+    },
+    {
+      "path": "Services/QuotaMonitor/deploy/quota-monitor.service",
+      "git_blob_sha": "db7868e91483bb2a89409f73ef20121b3e7d1c6e",
+      "bytes": 826
+    },
+    {
+      "path": "Services/QuotaMonitor/go.mod",
+      "git_blob_sha": "c2efdba04ba1042497f9311ead7c1e85be151d3a",
+      "bytes": 44
+    },
+    {
+      "path": "Services/QuotaMonitor/lifecycle.go",
+      "git_blob_sha": "176f60c301ea7974886175a1567930a50e8483ae",
+      "bytes": 1598
+    },
+    {
+      "path": "Services/QuotaMonitor/lifecycle_contract_test.go",
+      "git_blob_sha": "401586580f1e0e19f90db8f0485ac999d2247b61",
+      "bytes": 3459
+    },
+    {
+      "path": "Services/QuotaMonitor/payload.go",
+      "git_blob_sha": "b260ea5cdf58c515e2c304fd38672e377d413c65",
+      "bytes": 892
+    },
+    {
+      "path": "Services/QuotaMonitor/quota/quota.go",
+      "git_blob_sha": "3476e3220554ada3aadcad9e3ea07b9289f29972",
+      "bytes": 3756
+    },
+    {
+      "path": "Services/QuotaMonitor/quota/quota_test.go",
+      "git_blob_sha": "aadb21a0a423628c60bbb8176c48416928d6778c",
+      "bytes": 4920
+    },
+    {
+      "path": "Services/QuotaMonitor/quota/selection.go",
+      "git_blob_sha": "0d7e121e8911c9c5c958203ba2d3cf67a634c601",
+      "bytes": 994
+    },
+    {
+      "path": "Services/QuotaMonitor/quota/selection_test.go",
+      "git_blob_sha": "c57049564f4482d3f1a0e80f8f133f8e9fa9aa43",
+      "bytes": 3844
+    },
+    {
+      "path": "Services/QuotaMonitor/refresh_limits.go",
+      "git_blob_sha": "ebde32419c1a9de58372fa1cb210977d4cb8ac41",
+      "bytes": 1820
+    },
+    {
+      "path": "Services/QuotaMonitor/refresh_limits_test.go",
+      "git_blob_sha": "a8ef8d1740bc1138eaf8892d97bb2b6aa16f5f6f",
+      "bytes": 7084
+    },
+    {
+      "path": "Services/QuotaMonitor/runtime.go",
+      "git_blob_sha": "85bb93a16e5e5ac6c94e78d37646d71f36d96530",
+      "bytes": 5776
+    },
+    {
+      "path": "Services/QuotaMonitor/runtime_test.go",
+      "git_blob_sha": "988d7f998f035bb550ed913c2013849c4968b331",
+      "bytes": 2119
+    },
+    {
+      "path": "Services/QuotaMonitor/scheduler.go",
+      "git_blob_sha": "9bdea740223acd38300dee9a15962ae6b86498c4",
+      "bytes": 3560
+    },
+    {
+      "path": "Services/QuotaMonitor/service.go",
+      "git_blob_sha": "bf873033e52a736d3e63aa13d32cb33f21f8313c",
+      "bytes": 34581
+    },
+    {
+      "path": "Services/QuotaMonitor/service_test.go",
+      "git_blob_sha": "126b887d24e417a295a4672069238c3e2dc15935",
+      "bytes": 41982
+    },
+    {
+      "path": "Services/QuotaMonitor/storage.go",
+      "git_blob_sha": "7b4de3a24620f6107143d27c669e99a2e3f20057",
+      "bytes": 3363
+    },
+    {
+      "path": "Services/QuotaMonitor/storage_test.go",
+      "git_blob_sha": "c1aee353df5b665d815c2111cef4d066790d2ae1",
+      "bytes": 1501
+    },
+    {
+      "path": "Services/QuotaMonitor/storage_unix.go",
+      "git_blob_sha": "d880fa701c23aec110477f45e893e25c373f36ea",
+      "bytes": 515
+    },
+    {
+      "path": "Services/QuotaMonitor/storage_windows.go",
+      "git_blob_sha": "9e25b92eab5cbcebb9cffa5e857443464f3ba592",
+      "bytes": 1055
+    },
+    {
+      "path": "Sources/CPAQuotaActivity/CPAQuotaActivityState.swift",
+      "git_blob_sha": "469275fd5eb92f768b098164fca96b853cbae309",
+      "bytes": 5563
+    },
+    {
+      "path": "Sources/CPAQuotaActivity/CPAQuotaDeepLink.swift",
+      "git_blob_sha": "ee7d2419f4aca3d8fa58280ba756e982866b456f",
+      "bytes": 2074
+    },
+    {
+      "path": "Sources/CPAQuotaActivity/CPAQuotaLiveActivityWidget.swift",
+      "git_blob_sha": "fb303cba7f3154a655208f91bd7941cdb9ba6989",
+      "bytes": 8596
+    },
+    {
+      "path": "Sources/CPAQuotaActivity/CPAQuotaWidget.swift",
+      "git_blob_sha": "8bd8748a516590ecbe769b70fe1e6d92dd3d1c43",
+      "bytes": 12140
+    },
+    {
+      "path": "Sources/CPAQuotaActivity/QuotaWidgetSnapshot.swift",
+      "git_blob_sha": "6e1d73c214f9254da3f47dd3954690bdf7855801",
+      "bytes": 9493
+    },
+    {
+      "path": "Sources/CPAQuotaApp/CPAQuotaiOSApp.swift",
+      "git_blob_sha": "d8174cf63daa7fc0403408d7e7cbfffc9cf16245",
+      "bytes": 20758
+    },
+    {
+      "path": "Sources/CPAQuotaChat/AnyLanguageModelChatEngine.swift",
+      "git_blob_sha": "4d9cf1944fee51fd348ae05e9584c5f2f2f6af65",
+      "bytes": 27476
+    },
+    {
+      "path": "Sources/CPAQuotaChat/ChatBackgroundRunner.swift",
+      "git_blob_sha": "03ada5aa5c1c7316cc41e0cf5e321feda0498243",
+      "bytes": 5432
+    },
+    {
+      "path": "Sources/CPAQuotaChat/ChatContinuation.swift",
+      "git_blob_sha": "d1031ee99a3b4aec5d8e5d164d5e2b8a705908e3",
+      "bytes": 6887
+    },
+    {
+      "path": "Sources/CPAQuotaChat/ChatEngine.swift",
+      "git_blob_sha": "0056394fb6575e1b8f3fcc38ef9abf01f0c658bf",
+      "bytes": 2502
+    },
+    {
+      "path": "Sources/CPAQuotaChat/ChatModels.swift",
+      "git_blob_sha": "237fed56de10b25c231258326a8f6a5089ec1277",
+      "bytes": 11955
+    },
+    {
+      "path": "Sources/CPAQuotaChat/ChatPersistence.swift",
+      "git_blob_sha": "290b352cca8ebbd7c15a22e8cad351da6b8bcd0c",
+      "bytes": 8382
+    },
+    {
+      "path": "Sources/CPAQuotaChat/ChatPromptBuilder.swift",
+      "git_blob_sha": "59570f6b50e140bf7e305d7c43b0edde9d1ca47f",
+      "bytes": 5888
+    },
+    {
+      "path": "Sources/CPAQuotaChat/ChatReasoningPolicy.swift",
+      "git_blob_sha": "aaf5e0f0d1df7d68476f50a8e16ee5de32721892",
+      "bytes": 37075
+    },
+    {
+      "path": "Sources/CPAQuotaChat/ChatSearch.swift",
+      "git_blob_sha": "04046dad6ce71097059cc111ff4e6f5308bdd7cf",
+      "bytes": 13893
+    },
+    {
+      "path": "Sources/CPAQuotaChat/ChatWorkspaceModel.swift",
+      "git_blob_sha": "457a887daf658540e4d6632ac51b6898054fc3f4",
+      "bytes": 73566
+    },
+    {
+      "path": "Sources/CPAQuotaKit/AccountIdentity.swift",
+      "git_blob_sha": "6fb8333e79a0235bd8bb164c892cf82652cbcc8c",
+      "bytes": 213
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CAPUsageAggregation.swift",
+      "git_blob_sha": "b654a37e16145f9be61cd90d087bf8a67efa5d68",
+      "bytes": 6503
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CAPUsageAnalytics.swift",
+      "git_blob_sha": "ed4a97dd0765ffe852987fe459dba00a2db72115",
+      "bytes": 3558
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CAPUsageClient.swift",
+      "git_blob_sha": "2e32f0b6b4681ddfbbddf016122c6fa8101544c3",
+      "bytes": 12930
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CAPUsageCosts.swift",
+      "git_blob_sha": "570a26ec686237b5111eacb5a1aa1e92dd848ccf",
+      "bytes": 1625
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CAPUsageRequestPage.swift",
+      "git_blob_sha": "9bbef4f5d696cf8c3707e0275ad156193671fa05",
+      "bytes": 1334
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CAPUsageStats.swift",
+      "git_blob_sha": "9fd0ea73b4c96f9d2e92ef2a8e111b734e2b42da",
+      "bytes": 998
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CAPUsageStore.swift",
+      "git_blob_sha": "918deaa1f05cf400ee44c56a537c1cf07a1056e6",
+      "bytes": 13594
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CAPUsageWindow.swift",
+      "git_blob_sha": "e65e4315ac3c3c022afe414669a9d68f43fe9c08",
+      "bytes": 8612
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CPAAPIKeyDiscovery.swift",
+      "git_blob_sha": "dacf00128602aa472335be4e8a616d7a94c94236",
+      "bytes": 4081
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CPAClient.swift",
+      "git_blob_sha": "7dff694215b3c84eca129e72fb5ed8a6ebbcd7ec",
+      "bytes": 22913
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CPAClientAPIKey.swift",
+      "git_blob_sha": "41f3310e9bdbff11f1bd960c519e5673fecb923c",
+      "bytes": 1125
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CPAError.swift",
+      "git_blob_sha": "6130971091bda93b3d659e4f0b47ea10fa79b188",
+      "bytes": 3646
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CPAModelCatalogClient.swift",
+      "git_blob_sha": "5b47b9d4eaf040f4a59d3d19c2cd5ab32f0dd8ce",
+      "bytes": 3079
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CPAQuotaStore.swift",
+      "git_blob_sha": "be46a85bc8032f597ff8726beb581a21dbb15547",
+      "bytes": 8893
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CPAQuotaUITestFixtures.swift",
+      "git_blob_sha": "e067cddf60ac2bae9a94530428e3a8b26dc3cade",
+      "bytes": 11126
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CPAServer.swift",
+      "git_blob_sha": "9493a8e1f8195ba5e6a3b98a06c11aa02c9958c5",
+      "bytes": 3291
+    },
+    {
+      "path": "Sources/CPAQuotaKit/ChatSecretStore.swift",
+      "git_blob_sha": "78d01a22dc189bcc581ffdcb754a686d5d63c6be",
+      "bytes": 5218
+    },
+    {
+      "path": "Sources/CPAQuotaKit/ConnectionHealth.swift",
+      "git_blob_sha": "5f45ead7188f8a8295780b53c9a895050220facf",
+      "bytes": 2534
+    },
+    {
+      "path": "Sources/CPAQuotaKit/CredentialStore.swift",
+      "git_blob_sha": "a3ffd79a93a485af72060908a4ef072817c56f2d",
+      "bytes": 6581
+    },
+    {
+      "path": "Sources/CPAQuotaKit/HTTPTransport.swift",
+      "git_blob_sha": "beed61b084eafd36dfda0a0cfd7686942844295e",
+      "bytes": 8981
+    },
+    {
+      "path": "Sources/CPAQuotaKit/Models.swift",
+      "git_blob_sha": "e1bccca19adc7d5381571b10ca0dee7f77dcf03e",
+      "bytes": 6037
+    },
+    {
+      "path": "Sources/CPAQuotaKit/MonitoringBridgeCredentials.swift",
+      "git_blob_sha": "43d6f3513147c02f1aaafb5d40f6102d12ec438d",
+      "bytes": 7980
+    },
+    {
+      "path": "Sources/CPAQuotaKit/MonitoringCapabilities.swift",
+      "git_blob_sha": "1a61b5e6b4fbe597b04f2f84ac85c39c6864a262",
+      "bytes": 4649
+    },
+    {
+      "path": "Sources/CPAQuotaKit/MonitoringClient.swift",
+      "git_blob_sha": "f9762e3392256cede5ffe750cccf81a68dad7da9",
+      "bytes": 8523
+    },
+    {
+      "path": "Sources/CPAQuotaKit/MonitoringSession.swift",
+      "git_blob_sha": "d6e37a85633545aedc9680af2f134773dc4b4a1d",
+      "bytes": 5758
+    },
+    {
+      "path": "Sources/CPAQuotaKit/MonitoringSnapshot.swift",
+      "git_blob_sha": "90a2b5f93014e23e6c8b2e82b543702e7ef16b1e",
+      "bytes": 7699
+    },
+    {
+      "path": "Sources/CPAQuotaKit/MonitoringStore.swift",
+      "git_blob_sha": "d749b7cb0f8157df839e00272db81f31fbd8263e",
+      "bytes": 11263
+    },
+    {
+      "path": "Sources/CPAQuotaKit/QuotaParsing.swift",
+      "git_blob_sha": "c4ff66151d2f3266c19f8df5976599d18a292236",
+      "bytes": 17309
+    },
+    {
+      "path": "Sources/CPAQuotaKit/QuotaRequestLimiter.swift",
+      "git_blob_sha": "475b819acfdba3c16f0c7da59c9662da95f6f403",
+      "bytes": 3694
+    },
+    {
+      "path": "Sources/CPAQuotaKit/WireDecoding.swift",
+      "git_blob_sha": "af179f97a50afd4b142b46e9080f6a62592bbfb0",
+      "bytes": 25296
+    },
+    {
+      "path": "Sources/CPAQuotaProbe/Probe.swift",
+      "git_blob_sha": "44caf4f0e8c04c5fe556e19535be793edd996bc6",
+      "bytes": 3532
+    },
+    {
+      "path": "Sources/CPAQuotaUI/AccountDetailSheetView.swift",
+      "git_blob_sha": "fc5916d3fabca46a793866b1a76f64349cc29c48",
+      "bytes": 9291
+    },
+    {
+      "path": "Sources/CPAQuotaUI/AccountDiagnosticPresentation.swift",
+      "git_blob_sha": "f8ed64ed54b39e47f650cf5d50c27ba4a385abac",
+      "bytes": 2219
+    },
+    {
+      "path": "Sources/CPAQuotaUI/AccountsDiagnosticsTabView.swift",
+      "git_blob_sha": "09e12f6864ca24b9aef813b96ec9ee3a25dee634",
+      "bytes": 7714
+    },
+    {
+      "path": "Sources/CPAQuotaUI/AppearanceAndPreferences.swift",
+      "git_blob_sha": "7030877ff7d5d9e7ec52d52025b6b2663c742364",
+      "bytes": 13848
+    },
+    {
+      "path": "Sources/CPAQuotaUI/BrandActionColor.swift",
+      "git_blob_sha": "60be88c065f5092ebfcb4288c9d83ffd266eafc0",
+      "bytes": 1723
+    },
+    {
+      "path": "Sources/CPAQuotaUI/CAPUsageCoordinator.swift",
+      "git_blob_sha": "94a8bf37a8fc9dfe2347df882460c828af5731b4",
+      "bytes": 26782
+    },
+    {
+      "path": "Sources/CPAQuotaUI/CAPUsageDetailViews.swift",
+      "git_blob_sha": "7c93ef317f9f92d0e5d442993e2be733c3a1008b",
+      "bytes": 40446
+    },
+    {
+      "path": "Sources/CPAQuotaUI/CAPUsagePresentationModels.swift",
+      "git_blob_sha": "a2a544aaafb41938f50a8c1180f1ac87086e244e",
+      "bytes": 10195
+    },
+    {
+      "path": "Sources/CPAQuotaUI/CAPUsageTabView.swift",
+      "git_blob_sha": "e763c22c48b5ea30c0e9bc5525f5360be6fa1261",
+      "bytes": 34064
+    },
+    {
+      "path": "Sources/CPAQuotaUI/CPAQuotaRootView.swift",
+      "git_blob_sha": "1a8c2fd148aaf2a0bec5213fb160579b5bd1f0f6",
+      "bytes": 8593
+    },
+    {
+      "path": "Sources/CPAQuotaUI/CPAQuotaSession.swift",
+      "git_blob_sha": "8dd2f7f61e365fd9626e0e7c4a62a688696399d2",
+      "bytes": 56591
+    },
+    {
+      "path": "Sources/CPAQuotaUI/Chat/ChatComposerView.swift",
+      "git_blob_sha": "512d322af6c612af057e299f85e8d4a03304ac99",
+      "bytes": 21280
+    },
+    {
+      "path": "Sources/CPAQuotaUI/Chat/ChatConversationOptionsView.swift",
+      "git_blob_sha": "4dde580caa74703f14e96abb03357bcf609eb3b2",
+      "bytes": 7300
+    },
+    {
+      "path": "Sources/CPAQuotaUI/Chat/ChatConversationView.swift",
+      "git_blob_sha": "0f1ea1cdcf1d3e6cbc213a940d20c6977340f83a",
+      "bytes": 30646
+    },
+    {
+      "path": "Sources/CPAQuotaUI/Chat/ChatHTMLPreview.swift",
+      "git_blob_sha": "53519d82c2ecf1cddc1c5056ceabc350656df329",
+      "bytes": 7981
+    },
+    {
+      "path": "Sources/CPAQuotaUI/Chat/ChatHTMLSnippet.swift",
+      "git_blob_sha": "365d02d98847485e4fa141d0dc7b5cc5ecccf196",
+      "bytes": 2154
+    },
+    {
+      "path": "Sources/CPAQuotaUI/Chat/ChatLibraryViews.swift",
+      "git_blob_sha": "e730a4d0fcc93ee9a5a236e1c6243eca6fc04979",
+      "bytes": 11948
+    },
+    {
+      "path": "Sources/CPAQuotaUI/Chat/ChatMessageView.swift",
+      "git_blob_sha": "838aa69d1196fa708c1ede46bfdcd0003ba95f8e",
+      "bytes": 23476
+    },
+    {
+      "path": "Sources/CPAQuotaUI/Chat/ChatPresentation.swift",
+      "git_blob_sha": "e849403a9f8e9322a8a38347fb6629f81cbcc659",
+      "bytes": 10537
+    },
+    {
+      "path": "Sources/CPAQuotaUI/Chat/ChatReasoningPickerView.swift",
+      "git_blob_sha": "18f42e8af8d877de0f3930a568dc442df28c9132",
+      "bytes": 18927
+    },
+    {
+      "path": "Sources/CPAQuotaUI/Chat/ChatSettingsView.swift",
+      "git_blob_sha": "9314fb88989ee5c0385b36a7b31e9f71fc4e3adc",
+      "bytes": 20883
+    },
+    {
+      "path": "Sources/CPAQuotaUI/Chat/ChatWorkspaceView.swift",
+      "git_blob_sha": "191d052d5245b040b32c122c980d93d6adb8cd7d",
+      "bytes": 15300
+    },
+    {
+      "path": "Sources/CPAQuotaUI/Chat/IsolatedChatHTMLWebView.swift",
+      "git_blob_sha": "8f6ff8add563143f318969ff80cbd440875f5411",
+      "bytes": 4905
+    },
+    {
+      "path": "Sources/CPAQuotaUI/ConnectionManagementTabView.swift",
+      "git_blob_sha": "386f8b165d58ac76385b70a793fb23f056cd5a51",
+      "bytes": 9343
+    },
+    {
+      "path": "Sources/CPAQuotaUI/ConnectionStatusPresentation.swift",
+      "git_blob_sha": "3c32b8427f62ceff2c21699370702d52bbd1c80b",
+      "bytes": 7223
+    },
+    {
+      "path": "Sources/CPAQuotaUI/ErrorPresentation.swift",
+      "git_blob_sha": "376d72ce5598dbd59a95ead3a3aa67c939c61743",
+      "bytes": 11707
+    },
+    {
+      "path": "Sources/CPAQuotaUI/LiquidGlassDesignSystem.swift",
+      "git_blob_sha": "f89479a32446d77a6eafba969bbd54c35fe9397c",
+      "bytes": 8731
+    },
+    {
+      "path": "Sources/CPAQuotaUI/LoginOnboardingView.swift",
+      "git_blob_sha": "bfbcc4fcf2b3a2d316a4e40a110c10ea80efda5c",
+      "bytes": 7410
+    },
+    {
+      "path": "Sources/CPAQuotaUI/MonitoringTabView.swift",
+      "git_blob_sha": "5c82ec321544636aa1a103ba9a1c9a1a684bb9ed",
+      "bytes": 42385
+    },
+    {
+      "path": "Sources/CPAQuotaUI/MonitoringWorkspaceCoordinator.swift",
+      "git_blob_sha": "a46d0f92daa19089d37fcbbb91ba0b91398d3166",
+      "bytes": 76718
+    },
+    {
+      "path": "Sources/CPAQuotaUI/NativeContentComponents.swift",
+      "git_blob_sha": "2afbe426762dafd3c1b6704dc0cb2dbb4e5fe45e",
+      "bytes": 10168
+    },
+    {
+      "path": "Sources/CPAQuotaUI/QuotaPresentation.swift",
+      "git_blob_sha": "fe53a56031ca1a797d42bb3ef3d2f2a9693d68b6",
+      "bytes": 18985
+    },
+    {
+      "path": "Sources/CPAQuotaUI/QuotaWidgetPublisher.swift",
+      "git_blob_sha": "61545ff147fe0f491a82018ca3411f522b21dd36",
+      "bytes": 7600
+    },
+    {
+      "path": "Sources/CPAQuotaUI/QuotasOverviewTabView.swift",
+      "git_blob_sha": "885cdff0263cbf6d6aa13b0ca3b7cc8129f61cc5",
+      "bytes": 18042
+    },
+    {
+      "path": "Sources/CPAQuotaUI/SystemLiveActivitySupport.swift",
+      "git_blob_sha": "c1ca1ec533c2f9ab1eaee76c80825666189548de",
+      "bytes": 21529
+    },
+    {
+      "path": "Sources/CPAQuotaUI/WorkspaceActions.swift",
+      "git_blob_sha": "36775b1df46be83e1d4eac88de92d0b5899214bf",
+      "bytes": 2111
+    },
+    {
+      "path": "Tests/ContractFixtures/cpa-envelope-v1.json",
+      "git_blob_sha": "ccbb8932637a9765d9c7570a047b47d03183f058",
+      "bytes": 6353
+    },
+    {
+      "path": "Tests/ContractFixtures/monitoring-capabilities-v1.json",
+      "git_blob_sha": "ffd6c4d8c96bc771484c094ad91faf404da26532",
+      "bytes": 551
+    },
+    {
+      "path": "Tests/ContractFixtures/monitoring-lifecycle-v1.json",
+      "git_blob_sha": "60a09b2f1d675ac796248364490118b4792f5add",
+      "bytes": 13855
+    },
+    {
+      "path": "Tests/ContractFixtures/monitoring-v1-session.json",
+      "git_blob_sha": "ab13ee962b0855694cf929508456c3ca7db5542b",
+      "bytes": 763
+    },
+    {
+      "path": "Tests/ContractFixtures/quota-parity-v1.json",
+      "git_blob_sha": "ac451d7a422d0325f53b925c76966ff0b3b4bea3",
+      "bytes": 1362
+    },
+    {
+      "path": "docs/CAP_USAGE_BACKEND.md",
+      "git_blob_sha": "326dfb166532dd407fadef52dac589f3987edaf6",
+      "bytes": 13646
+    },
+    {
+      "path": "docs/FRONTEND_INTEGRATION.md",
+      "git_blob_sha": "5525842310f4166ad9c17432b79ac3eeb13b0695",
+      "bytes": 8810
+    },
+    {
+      "path": "docs/MONITOR_SERVICE.md",
+      "git_blob_sha": "a02b04d73c0cd77d1ad7921a0961cddf5ec06cb5",
+      "bytes": 25297
+    },
+    {
+      "path": "docs/RELEASE_GATES.md",
+      "git_blob_sha": "d1148243d1ece688de5315e00a4b87ab093bbec9",
+      "bytes": 6897
+    }
+  ],
+  "source_inventory_note": "Inventory records object paths and hashes; it does not assert that every listed file was read or tested."
+}
+

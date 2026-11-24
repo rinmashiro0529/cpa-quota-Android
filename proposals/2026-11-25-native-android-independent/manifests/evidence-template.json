@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "kind": "unexecuted_evidence_template",
+  "plan_id": "native-android-independent-20261125",
+  "instructions": "Copy for a real run; fill actual fields. This empty template proves no implementation or test result.",
+  "evidence_id": null,
+  "feature_ids": [],
+  "task_ids": [],
+  "test_refs": [],
+  "source_baseline_commit": "80beea9ed251a628307825cba99290b5f246575b",
+  "implementation": {
+    "repository": null,
+    "commit": null,
+    "dirty_worktree": null,
+    "pr_url": null,
+    "build_variant": null,
+    "artifact_sha256": null
+  },
+  "service": {
+    "repository": null,
+    "commit": null,
+    "protocol_version": null,
+    "server_version": null,
+    "environment": "synthetic_or_authorized_test"
+  },
+  "execution": {
+    "status": "not_run",
+    "started_at": null,
+    "finished_at": null,
+    "executor": null,
+    "commands_or_steps": [],
+    "expected": null,
+    "actual": null,
+    "request_count": null,
+    "blocked_reason": null
+  },
+  "environment": {
+    "host_os": null,
+    "jdk": null,
+    "gradle": null,
+    "agp": null,
+    "kotlin": null,
+    "compile_sdk": null,
+    "target_sdk": null,
+    "min_sdk": null,
+    "device_model": null,
+    "android_api": null,
+    "os_build": null,
+    "physical_device": null,
+    "window_size_dp": null,
+    "gms_available": null,
+    "notification_permission": null,
+    "network_class": null
+  },
+  "artifacts": [],
+  "observations": [],
+  "risks_remaining": [],
+  "review": {
+    "reviewer": null,
+    "independent_of_implementer": null,
+    "reviewed_commit": null,
+    "status": "not_reviewed",
+    "review_url": null
+  },
+  "status_values": [
+    "pass",
+    "fail",
+    "blocked",
+    "not_run"
+  ],
+  "redaction_policy": "Never include credentials, raw prompts, private account identifiers, full server addresses or notification tokens. Preserve replayable synthetic fixtures and redacted failure context."
+}
+
