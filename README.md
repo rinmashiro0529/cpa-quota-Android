@@ -73,7 +73,18 @@ Work in small, reviewable PRs. Every behavior change must have tests. Every feat
 
 ## Current next action
 
-Complete Phase 0 source audit and architecture validation before implementing production feature logic. The initial engineering task is [A0-01: establish source inventory and traceability](docs/TASK_BREAKDOWN.md).
+Complete Phase 0 source audit and architecture validation before implementing production feature logic. The initial engineering task is [A0-01: establish source inventory and traceability](https://github.com/rinmashiro0529/cpa-quota-Android/issues/1).
+
+### Initial GitHub work queue
+
+- [#1 A0-01 Source inventory and feature traceability](https://github.com/rinmashiro0529/cpa-quota-Android/issues/1)
+- [#2 A0-02 CPA API and quota contract extraction](https://github.com/rinmashiro0529/cpa-quota-Android/issues/2)
+- [#3 A0-03 CAP plugin contract extraction](https://github.com/rinmashiro0529/cpa-quota-Android/issues/3)
+- [#4 A0-04 AI workspace behavior audit](https://github.com/rinmashiro0529/cpa-quota-Android/issues/4)
+- [#5 A0-05 Go monitor service contract audit](https://github.com/rinmashiro0529/cpa-quota-Android/issues/5)
+- [#6 A0-06 UX, navigation and accessibility inventory](https://github.com/rinmashiro0529/cpa-quota-Android/issues/6)
+- [#7 A0-07 Security and privacy threat model](https://github.com/rinmashiro0529/cpa-quota-Android/issues/7)
+- [#8 B1-01 Validate and approve Android architecture](https://github.com/rinmashiro0529/cpa-quota-Android/issues/8)
 
 ## Reference
 
